@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Services | studio Unbound</title>
-<meta name="description" content="Design, build and the Unbound collection: joinery, furniture, acoustics, lighting, sustainable systems and styling. Every engagement is bespoke.">
+<meta name="description" content="Design, build and six specialist teams: joinery, furniture, sound, lighting, sustainable systems and styling.">
 <meta name="theme-color" content="#141615">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="studio Unbound">
 <meta property="og:title" content="Services | studio Unbound">
-<meta property="og:description" content="Design, build and the Unbound collection: joinery, furniture, acoustics, lighting, sustainable systems and styling. Every engagement is bespoke.">
+<meta property="og:description" content="Design, build and six specialist teams: joinery, furniture, sound, lighting, sustainable systems and styling.">
 <meta property="og:image" content="assets/img/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
@@ -29,6 +29,7 @@
     <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width=".7"/></pattern>
     <pattern id="hatch-chalk" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#ECE9E2" stroke-width=".9"/></pattern>
     <pattern id="dotgrid" x="10" y="10" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="currentColor"/></pattern>
+    <filter id="pencil" x="-8%" y="-8%" width="116%" height="116%"><feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G"/></filter>
     <filter id="chalk" x="-4%" y="-4%" width="108%" height="108%"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter>
   </defs>
 </svg>
@@ -40,11 +41,10 @@
       <span class="logo-tag">design &amp; build</span>
     </a>
     <nav class="nav" id="nav" aria-label="Primary">
-      <a href="story.html" data-nav="story" data-no="02"><span data-i18n="nav.story">Our Story</span></a>
-      <a href="services.html" data-nav="services" data-no="03"><span data-i18n="nav.services">Services</span></a>
-      <a href="process.html" data-nav="process" data-no="04"><span data-i18n="nav.process">How We Work</span></a>
-      <a href="why.html" data-nav="why" data-no="05"><span data-i18n="nav.why">Why Unbound</span></a>
-      <a class="nav-cta" href="contact.html" data-nav="contact" data-no="06"><span data-i18n="nav.cta">Begin a project</span></a>
+      <a href="story.html" data-nav="story"><span data-i18n="nav.story">About</span></a>
+      <a href="services.html" data-nav="services"><span data-i18n="nav.services">Services</span></a>
+      <a href="process.html" data-nav="process"><span data-i18n="nav.process">How it works</span></a>
+      <a class="nav-cta" href="contact.html" data-nav="contact"><span data-i18n="nav.cta">Start a project</span></a>
     </nav>
     <div class="lang">
       <button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="Choose language" data-i18n-attr="aria-label:ui.lang">
@@ -66,114 +66,75 @@
 
 <main id="main">
 
-  <section class="page-hero">
+  <section class="page-head">
+    <div class="wrap col center">
+      <h1 class="display display--page" data-i18n="sv.title">A home shaped around you.</h1>
+      <p class="lead" data-i18n="sv.lead">Start from nothing, or bring your own drawings. We take it from there.</p>
+    </div>
+  </section>
+
+  <section class="screen">
     <div class="wrap">
-      <p class="label"><span class="no">03</span><span data-i18n="sv.eyebrow">Services</span></p>
-      <h1 class="display display--page" data-i18n="sv.title">A home that embodies your vision.</h1>
-      <p class="lead" data-i18n="sv.lead">Whether you are starting from scratch or arrive with drawings in hand, we design it, document it and build it. Every engagement is bespoke.</p>
-    </div>
-  </section>
-
-  <section class="sec">
-    <div class="wrap sec-grid">
-      <header class="sec-label label"><span class="no">03.1</span><span data-i18n="sv.core">Design and build</span></header>
-      <div class="sec-body">
-        <div class="pair">
-          <div id="design">
-            <h2 class="offer-title" data-i18n="wd.d.title">Design</h2>
-            <div class="offer-item">
-              <h3 class="h3" data-i18n="d1.t">Planning &amp; consultation</h3>
-              <p data-i18n="d1.d">Professional planning, design, construction management and budgeting for your project.</p>
-              <ul class="tags">
-                <li data-i18n="d1.l1">New structures</li>
-                <li data-i18n="d1.l2">Additions</li>
-                <li data-i18n="d1.l3">Alterations</li>
-                <li data-i18n="d1.l4">Drawings</li>
-                <li data-i18n="d1.l5">Elevations</li>
-                <li data-i18n="d1.l6">Interior design &amp; décor</li>
-                <li data-i18n="d1.l7">Repairs</li>
-              </ul>
-            </div>
-            <div class="offer-item">
-              <h3 class="h3" data-i18n="d2.t">Bespoke architecture &amp; interiors</h3>
-              <p data-i18n="d2.d">Tailored, innovative solutions for your dream house.</p>
-            </div>
-          </div>
-          <div id="build">
-            <h2 class="offer-title" data-i18n="wd.b.title">Build</h2>
-            <div class="offer-item">
-              <h3 class="h3" data-i18n="b1.t">Turnkey solutions</h3>
-              <p data-i18n="b1.d">One team from foundation to furnishing, with expert supervision and quality checks throughout.</p>
-            </div>
-            <div class="offer-item" id="custom">
-              <h3 class="h3" data-i18n="b2.t">Custom works</h3>
-              <p data-i18n="b2.d">Have something particular in mind? Drop in your dialogue and we will get back at the earliest.</p>
-              <a class="tl" href="contact.html?interest=custom"><span data-i18n="b2.link">Start the conversation</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-            </div>
-          </div>
+      <div class="duo">
+        <div class="panel" id="design">
+          <h2 class="h2" data-i18n="w1.t">Design</h2>
+          <p data-i18n="sd.text">Planning, architecture and interiors, with a budget from the start.</p>
+          <ul class="chips">
+            <li data-i18n="sd.l1">New homes</li>
+            <li data-i18n="sd.l2">Additions</li>
+            <li data-i18n="sd.l3">Alterations</li>
+            <li data-i18n="sd.l4">Interiors</li>
+            <li data-i18n="sd.l5">Repairs</li>
+          </ul>
+        </div>
+        <div class="panel" id="build">
+          <h2 class="h2" data-i18n="w2.t">Build</h2>
+          <p data-i18n="sb.text">One team from foundation to furniture, with checks at every stage.</p>
+          <p id="custom"><a class="tl" href="contact.html?interest=custom"><span data-i18n="sb.custom">Something unusual in mind? Tell us</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="collection">
-    <div class="wrap sec-grid">
-      <header class="sec-label label"><span class="no">03.2</span><span data-i18n="col.eyebrow">The Unbound collection</span></header>
-      <div class="sec-body">
-        <h2 class="h2" data-i18n="col.title">Six ways to make a space your own.</h2>
-        <p class="lead" data-i18n="col.text">Each is a specialist practice within the studio. Take one, or let them work together.</p>
-        <div class="brands">
-          <article class="brand" id="joinery">
-            <div class="brand-icon"><svg class="sk sk--icon draw" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M18 34H102V86H18Z"/><path class="a d" pathLength="1" style="--d:.5s" d="M56 34V40L72 37V55L56 51V69L72 65V83L56 80V86"/><path class="t d" pathLength="1" style="--d:.9s" d="M24 46H48M24 60H50M24 74H48M82 40V80M92 40V80"/></svg></div>
-            <h3 class="brand-name">Unbound <b>Joinery</b></h3>
-            <p class="brand-text"><strong data-i18n="sb1.scope">Tailored cabinetry and woodwork</strong><span data-i18n="sb1.note">Bespoke craftsmanship, liberated from convention.</span></p>
-            <a class="tl" href="contact.html?interest=joinery"><span data-i18n="sb.link">Enquire</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-          </article>
-          <article class="brand" id="living">
-            <div class="brand-icon"><svg class="sk sk--icon draw" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M14 100H106"/><path class="d" pathLength="1" style="--d:.3s" d="M38 26L42 68L40 100M42 68H80M80 68L82 100M42 75H80"/><path class="t d" pathLength="1" style="--d:.8s" d="M41 89H81"/><circle class="gf pop" style="--d:1s" cx="94" cy="32" r="4"/></svg></div>
-            <h3 class="brand-name">Unbound <b>Living</b></h3>
-            <p class="brand-text"><strong data-i18n="sb2.scope">Crafted furniture, indoors and out</strong><span data-i18n="sb2.note">Pieces that extend your life beyond the walls.</span></p>
-            <a class="tl" href="contact.html?interest=living"><span data-i18n="sb.link">Enquire</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-          </article>
-          <article class="brand" id="acoustics">
-            <div class="brand-icon"><svg class="sk sk--icon draw" viewBox="0 0 120 120" aria-hidden="true"><circle class="gf pop" cx="30" cy="60" r="4.5"/><path class="d" pathLength="1" style="--d:.2s" d="M47 43A24 24 0 0 1 47 77"/><path class="d" pathLength="1" style="--d:.4s" d="M60.4 29.6A43 43 0 0 1 60.4 90.4"/><path class="a d" pathLength="1" style="--d:.6s" d="M73.8 16.2A62 62 0 0 1 73.8 103.8"/></svg></div>
-            <h3 class="brand-name">Unbound <b>Acoustics</b></h3>
-            <p class="brand-text"><strong data-i18n="sb3.scope">Integrated audio and video systems</strong><span data-i18n="sb3.note">Immersive sound and vision, built into the room.</span></p>
-            <a class="tl" href="contact.html?interest=acoustics"><span data-i18n="sb.link">Enquire</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-          </article>
-          <article class="brand" id="illume">
-            <div class="brand-icon"><svg class="sk sk--icon draw" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M60 8V40"/><path class="d" pathLength="1" style="--d:.3s" d="M40 60A20 20 0 0 1 80 60Z"/><path class="a t d" pathLength="1" style="--d:.7s" d="M44 68L26 108M60 72V110M76 68L94 108"/><circle class="gf pop" style="--d:.6s" cx="60" cy="64" r="3.5"/></svg></div>
-            <h3 class="brand-name">Unbound <b>Illume</b></h3>
-            <p class="brand-text"><strong data-i18n="sb4.scope">Lighting and automation</strong><span data-i18n="sb4.note">Smart controls blended with luminous design.</span></p>
-            <a class="tl" href="contact.html?interest=illume"><span data-i18n="sb.link">Enquire</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-          </article>
-          <article class="brand" id="earth">
-            <div class="brand-icon"><svg class="sk sk--icon draw" viewBox="0 0 120 120" aria-hidden="true"><path class="t d" pathLength="1" d="M106 60A46 46 0 1 1 14 60A46 46 0 1 1 106 60"/><path class="d" pathLength="1" style="--d:.3s" d="M32 92H88"/><path class="d" pathLength="1" style="--d:.5s" d="M60 92V54"/><path class="d" pathLength="1" style="--d:.7s" d="M60 72C44 70 38 56 40 46C54 46 62 58 60 72"/><path class="a d" pathLength="1" style="--d:.9s" d="M60 58C74 56 82 44 80 34C68 36 60 46 60 58"/></svg></div>
-            <h3 class="brand-name">Unbound <b>Earth</b></h3>
-            <p class="brand-text"><strong data-i18n="sb5.scope">Sustainable infrastructure</strong><span data-i18n="sb5.note">Environmental stewardship and circular-economy solutions.</span></p>
-            <a class="tl" href="contact.html?interest=earth"><span data-i18n="sb.link">Enquire</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-          </article>
-          <article class="brand" id="decor">
-            <div class="brand-icon"><svg class="sk sk--icon draw" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M16 100H104"/><path class="t d" pathLength="1" style="--d:.2s" d="M18 20H42V50H18Z"/><path class="d" pathLength="1" style="--d:.4s" d="M54 100C42 86 46 70 56 64V54H68V64C78 70 82 86 70 100"/><path class="a d" pathLength="1" style="--d:.8s" d="M62 54C60 40 66 28 78 20"/><path class="a t d" pathLength="1" style="--d:1s" d="M66 38C72 38 76 34 78 30M63 46C56 44 52 38 52 32"/></svg></div>
-            <h3 class="brand-name">Unbound <b>Decor &amp; Styling</b></h3>
-            <p class="brand-text"><strong data-i18n="sb6.scope">Curtains, art, murals and furnishings</strong><span data-i18n="sb6.note">Bespoke styling, from cutlery to crockery.</span></p>
-            <a class="tl" href="contact.html?interest=decor"><span data-i18n="sb.link">Enquire</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-          </article>
-        </div>
+  <section class="screen" id="collection">
+    <div class="wrap">
+      <div class="col center">
+        <h2 class="h2" data-i18n="col.title">Six specialist teams</h2>
+        <p class="lead" data-i18n="col.text">Use one, or let them work together.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="sec">
-    <div class="wrap sec-grid">
-      <header class="sec-label label"><span class="no">03.3</span><span data-i18n="fw.eyebrow">Who we work with</span></header>
-      <div class="sec-body">
-        <h2 class="h2" data-i18n="fw.title">Homes, companies and industries.</h2>
-        <div class="prose">
-          <p data-i18n="fw.p1">Every solution is curated to a specific requirement, solves a specific purpose and raises the design standard of its segment.</p>
-          <p data-i18n="fw.p2">Every design and build element is carefully considered, so each detail is captured and nothing is overlooked. We work with designers, architects, consultants and a wide network of suppliers to bring the best minds to your project.</p>
-        </div>
+      <div class="tiles">
+        <a class="tile" id="joinery" href="contact.html?interest=joinery">
+          <div class="tile-art"><svg class="sk sk--icon draw" filter="url(#pencil)" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M18 34H102V86H18Z"/><path class="a d" pathLength="1" style="--d:.5s" d="M56 34V40L72 37V55L56 51V69L72 65V83L56 80V86"/><path class="t d" pathLength="1" style="--d:.9s" d="M24 46H48M24 60H50M24 74H48M82 40V80M92 40V80"/></svg></div>
+          <span class="tile-name">Unbound <b>Joinery</b></span>
+          <span class="tile-line" data-i18n="sb1.scope">Cabinets and woodwork</span>
+        </a>
+        <a class="tile" id="living" href="contact.html?interest=living">
+          <div class="tile-art"><svg class="sk sk--icon draw" filter="url(#pencil)" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M14 100H106"/><path class="d" pathLength="1" style="--d:.3s" d="M38 26L42 68L40 100M42 68H80M80 68L82 100M42 75H80"/><path class="t d" pathLength="1" style="--d:.8s" d="M41 89H81"/><circle class="gf pop" style="--d:1s" cx="94" cy="32" r="4"/></svg></div>
+          <span class="tile-name">Unbound <b>Living</b></span>
+          <span class="tile-line" data-i18n="sb2.scope">Furniture, indoors and out</span>
+        </a>
+        <a class="tile" id="acoustics" href="contact.html?interest=acoustics">
+          <div class="tile-art"><svg class="sk sk--icon draw" filter="url(#pencil)" viewBox="0 0 120 120" aria-hidden="true"><circle class="gf pop" cx="30" cy="60" r="4.5"/><path class="d" pathLength="1" style="--d:.2s" d="M47 43A24 24 0 0 1 47 77"/><path class="d" pathLength="1" style="--d:.4s" d="M60.4 29.6A43 43 0 0 1 60.4 90.4"/><path class="a d" pathLength="1" style="--d:.6s" d="M73.8 16.2A62 62 0 0 1 73.8 103.8"/></svg></div>
+          <span class="tile-name">Unbound <b>Acoustics</b></span>
+          <span class="tile-line" data-i18n="sb3.scope">Sound and video systems</span>
+        </a>
+        <a class="tile" id="illume" href="contact.html?interest=illume">
+          <div class="tile-art"><svg class="sk sk--icon draw" filter="url(#pencil)" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M60 8V40"/><path class="d" pathLength="1" style="--d:.3s" d="M40 60A20 20 0 0 1 80 60Z"/><path class="a t d" pathLength="1" style="--d:.7s" d="M44 68L26 108M60 72V110M76 68L94 108"/><circle class="gf pop" style="--d:.6s" cx="60" cy="64" r="3.5"/></svg></div>
+          <span class="tile-name">Unbound <b>Illume</b></span>
+          <span class="tile-line" data-i18n="sb4.scope">Lighting and automation</span>
+        </a>
+        <a class="tile" id="earth" href="contact.html?interest=earth">
+          <div class="tile-art"><svg class="sk sk--icon draw" filter="url(#pencil)" viewBox="0 0 120 120" aria-hidden="true"><path class="t d" pathLength="1" d="M106 60A46 46 0 1 1 14 60A46 46 0 1 1 106 60"/><path class="d" pathLength="1" style="--d:.3s" d="M32 92H88"/><path class="d" pathLength="1" style="--d:.5s" d="M60 92V54"/><path class="d" pathLength="1" style="--d:.7s" d="M60 72C44 70 38 56 40 46C54 46 62 58 60 72"/><path class="a d" pathLength="1" style="--d:.9s" d="M60 58C74 56 82 44 80 34C68 36 60 46 60 58"/></svg></div>
+          <span class="tile-name">Unbound <b>Earth</b></span>
+          <span class="tile-line" data-i18n="sb5.scope">Sustainable systems</span>
+        </a>
+        <a class="tile" id="decor" href="contact.html?interest=decor">
+          <div class="tile-art"><svg class="sk sk--icon draw" filter="url(#pencil)" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M16 100H104"/><path class="t d" pathLength="1" style="--d:.2s" d="M18 20H42V50H18Z"/><path class="d" pathLength="1" style="--d:.4s" d="M54 100C42 86 46 70 56 64V54H68V64C78 70 82 86 70 100"/><path class="a d" pathLength="1" style="--d:.8s" d="M62 54C60 40 66 28 78 20"/><path class="a t d" pathLength="1" style="--d:1s" d="M66 38C72 38 76 34 78 30M63 46C56 44 52 38 52 32"/></svg></div>
+          <span class="tile-name">Unbound <b>Decor &amp; Styling</b></span>
+          <span class="tile-line" data-i18n="sb6.scope">Curtains, art and furnishings</span>
+        </a>
       </div>
+      <p class="col center fw-note" data-i18n="fw.text">For homes, companies and industries. Each solution is made for one need.</p>
     </div>
   </section>
 
@@ -181,11 +142,10 @@
 
 <section class="cta-band">
   <div class="wrap">
-    <div class="cta-arch reveal">
-      <p class="motto" data-i18n="cta.quote">By our work shall you know us.</p>
-      <h2 class="h2" data-i18n="cta.title">Bring us a vision that hasn't been built.</h2>
-      <p class="lead" data-i18n="cta.text">Tell us about the property, its location and what you want to create. We will get back to you within a few days.</p>
-      <div class="cta-row"><a class="go" href="contact.html"><span class="go-ring"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span><span data-i18n="cta.btn">Tell us about your project</span></a></div>
+    <div class="cta-arch">
+      <h2 class="h2" data-i18n="cta.title">Your home isn't on this site. It hasn't been built yet.</h2>
+      <p class="lead" data-i18n="cta.text">Tell us where it is and what you want. We reply within a few days.</p>
+      <div class="cta-row"><a class="go" href="contact.html"><span class="go-ring"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span><span data-i18n="cta.btn">Start a project</span></a></div>
     </div>
   </div>
 </section>
@@ -202,10 +162,9 @@
         <h2 class="label" data-i18n="footer.explore">Explore</h2>
         <ul>
           <li><a href="index.html" data-nav="home" data-i18n="nav.home">Home</a></li>
-          <li><a href="story.html" data-nav="story" data-i18n="nav.story">Our Story</a></li>
+          <li><a href="story.html" data-nav="story" data-i18n="nav.story">About</a></li>
           <li><a href="services.html" data-nav="services" data-i18n="nav.services">Services</a></li>
-          <li><a href="process.html" data-nav="process" data-i18n="nav.process">How We Work</a></li>
-          <li><a href="why.html" data-nav="why" data-i18n="nav.why">Why Unbound</a></li>
+          <li><a href="process.html" data-nav="process" data-i18n="nav.process">How it works</a></li>
           <li><a href="contact.html" data-nav="contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>

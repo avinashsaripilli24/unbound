@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>How We Work | studio Unbound</title>
-<meta name="description" content="Five stages from the first conversation to handover: discovery, design, documentation, execution and delivery, with a fixed-price contract before we build.">
+<title>How it works | studio Unbound</title>
+<meta name="description" content="Five steps from first meeting to handover, with a fixed price agreed in writing before building starts.">
 <meta name="theme-color" content="#141615">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="studio Unbound">
-<meta property="og:title" content="How We Work | studio Unbound">
-<meta property="og:description" content="Five stages from the first conversation to handover: discovery, design, documentation, execution and delivery, with a fixed-price contract before we build.">
+<meta property="og:title" content="How it works | studio Unbound">
+<meta property="og:description" content="Five steps from first meeting to handover, with a fixed price agreed in writing before building starts.">
 <meta property="og:image" content="assets/img/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
@@ -29,6 +29,7 @@
     <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width=".7"/></pattern>
     <pattern id="hatch-chalk" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#ECE9E2" stroke-width=".9"/></pattern>
     <pattern id="dotgrid" x="10" y="10" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="currentColor"/></pattern>
+    <filter id="pencil" x="-8%" y="-8%" width="116%" height="116%"><feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G"/></filter>
     <filter id="chalk" x="-4%" y="-4%" width="108%" height="108%"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter>
   </defs>
 </svg>
@@ -40,11 +41,10 @@
       <span class="logo-tag">design &amp; build</span>
     </a>
     <nav class="nav" id="nav" aria-label="Primary">
-      <a href="story.html" data-nav="story" data-no="02"><span data-i18n="nav.story">Our Story</span></a>
-      <a href="services.html" data-nav="services" data-no="03"><span data-i18n="nav.services">Services</span></a>
-      <a href="process.html" data-nav="process" data-no="04"><span data-i18n="nav.process">How We Work</span></a>
-      <a href="why.html" data-nav="why" data-no="05"><span data-i18n="nav.why">Why Unbound</span></a>
-      <a class="nav-cta" href="contact.html" data-nav="contact" data-no="06"><span data-i18n="nav.cta">Begin a project</span></a>
+      <a href="story.html" data-nav="story"><span data-i18n="nav.story">About</span></a>
+      <a href="services.html" data-nav="services"><span data-i18n="nav.services">Services</span></a>
+      <a href="process.html" data-nav="process"><span data-i18n="nav.process">How it works</span></a>
+      <a class="nav-cta" href="contact.html" data-nav="contact"><span data-i18n="nav.cta">Start a project</span></a>
     </nav>
     <div class="lang">
       <button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="Choose language" data-i18n-attr="aria-label:ui.lang">
@@ -66,174 +66,82 @@
 
 <main id="main">
 
-  <section class="page-hero">
-    <div class="wrap">
-      <p class="label"><span class="no">04</span><span data-i18n="pp.eyebrow">How we work</span></p>
-      <h1 class="display display--page" data-i18n="pp.title">From the first conversation to the handover.</h1>
-      <p class="lead" data-i18n="pp.lead">Five stages, one unified team and a clear document at every step, so you always know where your project stands.</p>
+  <section class="page-head">
+    <div class="wrap col center">
+      <h1 class="display display--page" data-i18n="pp.title">How it works</h1>
+      <p class="lead" data-i18n="pp.lead">Five steps. You always know which one comes next.</p>
     </div>
   </section>
 
-  <nav class="stepper" aria-label="Stages" data-stepper>
-    <div class="wrap">
-      <ol>
-        <li><a href="#stage-1"><span class="no">01</span><span class="s-name" data-i18n="st1.name">Discovery</span></a></li>
-        <li><a href="#stage-2"><span class="no">02</span><span class="s-name" data-i18n="st2.name">Design</span></a></li>
-        <li><a href="#stage-3"><span class="no">03</span><span class="s-name" data-i18n="st3.name">Documentation</span></a></li>
-        <li><a href="#stage-4"><span class="no">04</span><span class="s-name" data-i18n="st4.name">Execution</span></a></li>
-        <li><a href="#stage-5"><span class="no">05</span><span class="s-name" data-i18n="st5.name">Delivery</span></a></li>
+  <section class="screen screen--tight">
+    <div class="wrap col">
+      <ol class="stages">
+
+        <li class="stage" id="stage-1">
+          <span class="stage-num" aria-hidden="true">1</span>
+          <div>
+            <h2 class="h2" data-i18n="st1.name">Listen</h2>
+            <p class="stage-sum" data-i18n="st1.sum">We meet, walk your site and understand how you want to live.</p>
+            <p class="stage-get"><b data-i18n="lbl.get">You get</b> <span data-i18n="st1.get">A written brief, a site survey, a first concept and a budget estimate.</span></p>
+            <details class="more"><summary data-i18n="lbl.more">More detail</summary><p data-i18n="st1.more">Bring photos, plans and ideas you like. We survey the site, then show you a concept with mood boards. You sign a Design Agreement, and its fee covers the survey, the concept and the estimate. The estimate is a guide, not the final price.</p></details>
+          </div>
+        </li>
+
+        <li class="stage" id="stage-2">
+          <span class="stage-num" aria-hidden="true">2</span>
+          <div>
+            <h2 class="h2" data-i18n="st2.name">Design</h2>
+            <p class="stage-sum" data-i18n="st2.sum">The concept becomes drawings, 3D views and numbers.</p>
+            <p class="stage-get"><b data-i18n="lbl.get">You get</b> <span data-i18n="st2.get">Drawings, 3D views, a list of materials and a budget made for you.</span></p>
+            <details class="more"><summary data-i18n="lbl.more">More detail</summary><p data-i18n="st2.more">We detail every part of the design. The floor plan, front view and 3D view are revised until they suit you. The list of materials and quantities is called a bill of quantities (BoQ).</p></details>
+          </div>
+        </li>
+
+        <li class="stage" id="stage-3">
+          <span class="stage-num" aria-hidden="true">3</span>
+          <div>
+            <h2 class="h2" data-i18n="st3.name">Agree</h2>
+            <p class="stage-sum" data-i18n="st3.sum">Everything is chosen, priced and signed before work begins.</p>
+            <p class="stage-get"><b data-i18n="lbl.get">You get</b> <span data-i18n="st3.get">Final drawings, your chosen materials and a fixed-price contract.</span></p>
+            <details class="more"><summary data-i18n="lbl.more">More detail</summary><p data-i18n="st3.more">First you sign a Preparation of Plans Agreement (PPA). You then choose fixtures, floors, colours and finishes with our team. The contract shows the cost of every room, with vendor options, a timeline and a delivery schedule.</p></details>
+          </div>
+        </li>
+
+        <li class="stage" id="stage-4">
+          <span class="stage-num" aria-hidden="true">4</span>
+          <div>
+            <h2 class="h2" data-i18n="st4.name">Build</h2>
+            <p class="stage-sum" data-i18n="st4.sum">We build it, on site and in our workshop.</p>
+            <p class="stage-get"><b data-i18n="lbl.get">You get</b> <span data-i18n="st4.get">Expert supervision, quality checks and a team that stays in touch.</span></p>
+            <figure class="photo-band" data-photo="site" data-photo-alt="Construction in progress" hidden></figure>
+          </div>
+        </li>
+
+        <li class="stage" id="stage-5">
+          <span class="stage-num" aria-hidden="true">5</span>
+          <div>
+            <h2 class="h2" data-i18n="st5.name">Hand over</h2>
+            <p class="stage-sum" data-i18n="st5.sum">We furnish it, style it and hand it over.</p>
+            <p class="stage-get"><b data-i18n="lbl.get">You get</b> <span data-i18n="st5.get">Your space, ready to live in.</span></p>
+            <details class="more"><summary data-i18n="lbl.more">More detail</summary><p data-i18n="st5.more">We deliver and place every furnishing. We choose art and accessories, or use pieces you already love.</p></details>
+          </div>
+        </li>
+
       </ol>
     </div>
-  </nav>
-
-  <section class="sec stage" id="stage-1" data-stage>
-    <div class="wrap sec-grid">
-      <header class="sec-label label">
-        <span><span class="no">04.1</span>&nbsp; <span data-i18n="lbl.stage">Stage</span> 1</span>
-        <div class="stage-fig"><svg class="sk sk--icon draw" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M60 62C72 36 106 40 100 64C95 84 70 82 60 62C50 40 22 38 20 60C18 82 48 86 60 62"/><path class="t d" pathLength="1" style="--d:.6s" d="M16 98C40 92 82 102 104 94"/><circle class="gf pop" style="--d:.9s" cx="60" cy="62" r="3.5"/></svg></div>
-      </header>
-      <div class="sec-body">
-        <h2 class="stage-title" data-i18n="st1.name">Discovery</h2>
-        <p class="stage-sum" data-i18n="st1.sum">We listen, walk the site and shape a first concept.</p>
-        <div class="steps">
-          <details open><summary data-i18n="st1.a.t">First consultation</summary><p data-i18n="st1.a.d">We meet to discuss your vision and write a detailed design brief: how you want to live, from function through to aesthetics. Bring your inspirations, images, styles, floor plans and ideas.</p></details>
-          <details><summary data-i18n="st1.b.t">Site survey</summary><p data-i18n="st1.b.d">We inspect and survey the site, recording its levels and features so that every complexity is defined early.</p></details>
-          <details><summary data-i18n="st1.c.t">Creating the concept</summary><p data-i18n="st1.c.d">Through conversations on and off site we get to know your personality, your sense of aesthetics and your lifestyle, so the concept reflects who you are.</p></details>
-          <details><summary data-i18n="st1.d.t">Concept presentation</summary><p data-i18n="st1.d.d">Preliminary designs and mood boards communicate the colour, texture and ambience of the project.</p></details>
-        </div>
-        <dl class="outcome outcome--2">
-          <div><dt class="label" data-i18n="lbl.receive">You receive</dt><dd data-i18n="st1.rec">A design brief, site survey, concept design and budget estimate</dd></div>
-          <div><dt class="label" data-i18n="lbl.sign">You sign</dt><dd data-i18n="st1.sgn">Design Agreement</dd></div>
-        </dl>
-        <p class="fineprint" data-i18n="st1.fee">The design fee covers the site survey, proof-of-concept design and a budget estimate. The estimate is an estimate only, not the contract quotation.</p>
-      </div>
-    </div>
   </section>
 
-  <section class="sec stage" id="stage-2" data-stage>
-    <div class="wrap sec-grid">
-      <header class="sec-label label">
-        <span><span class="no">04.2</span>&nbsp; <span data-i18n="lbl.stage">Stage</span> 2</span>
-        <div class="stage-fig"><svg class="sk sk--icon draw" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M50 82H24V30H92V82H66"/><path class="a d" pathLength="1" style="--d:.5s" d="M50 82V66A16 16 0 0 1 66 82"/><path class="t d" pathLength="1" style="--d:.8s" d="M24 98H92M24 94V102M92 94V102M106 30V82M102 30H110M102 82H110"/></svg></div>
-      </header>
-      <div class="sec-body">
-        <h2 class="stage-title" data-i18n="st2.name">Design</h2>
-        <p class="stage-sum" data-i18n="st2.sum">The concept becomes drawings, renders and numbers.</p>
-        <div class="steps">
-          <details><summary data-i18n="st2.a.t">Detailed layout</summary><p data-i18n="st2.a.d">Drawings and renders so you can visualise your plan, with a detailed bill of quantities for materials.</p></details>
-          <details><summary data-i18n="st2.b.t">Detailed design</summary><p data-i18n="st2.b.d">Every aspect of the scheme is detailed, specified and proposed for your approval.</p></details>
-          <details><summary data-i18n="st2.c.t">Proof of concept &amp; budget estimate</summary><p data-i18n="st2.c.d">A scaled floor plan, front elevation and 3D render, revised until it suits you. Then a personalised budget estimate, for transparency and peace of mind.</p></details>
-        </div>
-        <dl class="outcome">
-          <div><dt class="label" data-i18n="lbl.receive">You receive</dt><dd data-i18n="st2.rec">Drawings, renders, a bill of quantities and a personalised budget estimate</dd></div>
-        </dl>
+  <section class="screen" id="fees">
+    <div class="wrap col">
+      <div class="center">
+        <h2 class="h2" data-i18n="pay.title">What you pay, and when</h2>
+        <p class="lead" data-i18n="pay.text">Three payments before building starts. Each one is told to you in advance.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="sec stage" id="stage-3" data-stage>
-    <div class="wrap sec-grid">
-      <header class="sec-label label">
-        <span><span class="no">04.3</span>&nbsp; <span data-i18n="lbl.stage">Stage</span> 3</span>
-        <div class="stage-fig"><svg class="sk sk--icon draw" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M30 16H76L92 32V104H30Z"/><path class="t d" pathLength="1" style="--d:.4s" d="M76 16V32H92"/><path class="t d" pathLength="1" style="--d:.6s" d="M40 48H82M40 58H82M40 68H68"/><path class="a d" pathLength="1" style="--d:1s" d="M40 92C46 82 50 96 56 88C60 82 64 94 70 86"/><circle class="gf pop" style="--d:1.2s" cx="81" cy="89" r="3.5"/></svg></div>
-      </header>
-      <div class="sec-body">
-        <h2 class="stage-title" data-i18n="st3.name">Documentation</h2>
-        <p class="stage-sum" data-i18n="st3.sum">Everything is specified, priced and agreed before work begins.</p>
-        <div class="steps">
-          <details><summary data-i18n="st3.a.t">Preparation of Plans Agreement</summary><p data-i18n="st3.a.d">Once you are confident in the concept and the budget estimate, we prepare the PPA. Fees at this stage equal 2% of the budget estimate, and include all council and consultant fees through the design process.</p></details>
-          <details><summary data-i18n="st3.b.t">Development drawings</summary><p data-i18n="st3.b.d">All the designs and drawings needed for execution, and for your own use afterwards.</p></details>
-          <details><summary data-i18n="st3.c.t">Materials &amp; specification</summary><p data-i18n="st3.c.d">You choose appliances, fixtures, floor coverings, colour palettes and finishes, with our team guiding every selection.</p></details>
-          <details><summary data-i18n="st3.d.t">Fixed-price contract</summary><p data-i18n="st3.d.d">A detailed cost plan shows the cost of each element, room by room. Custom furniture and bought-out items are listed individually with vendor options, and the timeline and delivery schedule are set before execution.</p></details>
-          <details><summary data-i18n="st3.e.t">Sign-off</summary><p data-i18n="st3.e.d">With your approval, the documents are signed and the deposit is paid. We are ready to build.</p></details>
-        </div>
-        <dl class="outcome outcome--2">
-          <div><dt class="label" data-i18n="lbl.receive">You receive</dt><dd data-i18n="st3.rec">Development drawings, specifications and a room-by-room cost plan</dd></div>
-          <div><dt class="label" data-i18n="lbl.sign">You sign</dt><dd data-i18n="st3.sgn">Preparation of Plans Agreement and the fixed-price contract</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec stage" id="stage-4" data-stage>
-    <div class="wrap sec-grid">
-      <header class="sec-label label">
-        <span><span class="no">04.4</span>&nbsp; <span data-i18n="lbl.stage">Stage</span> 4</span>
-        <div class="stage-fig"><svg class="sk sk--icon draw" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M18 34H102V86H18Z"/><path class="a d" pathLength="1" style="--d:.5s" d="M56 34V40L72 37V55L56 51V69L72 65V83L56 80V86"/><path class="t d" pathLength="1" style="--d:.9s" d="M24 46H48M24 60H50M24 74H48M82 40V80M92 40V80"/></svg></div>
-      </header>
-      <div class="sec-body">
-        <h2 class="stage-title" data-i18n="st4.name">Execution</h2>
-        <p class="stage-sum" data-i18n="st4.sum">We build, on site and in the workshop, with expert supervision and quality checks throughout.</p>
-        <div class="steps">
-          <details><summary data-i18n="st4.a.t">Building it</summary><p data-i18n="st4.a.d">The application is lodged and work begins. Every issue is resolved promptly and efficiently, to your satisfaction.</p></details>
-        </div>
-        <dl class="outcome">
-          <div><dt class="label" data-i18n="lbl.receive">You receive</dt><dd data-i18n="st4.rec">Supervised execution, and a team that stays in touch at every step</dd></div>
-        </dl>
-        <figure class="photo-band" data-photo="site" data-photo-alt="Construction in progress" hidden></figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec stage" id="stage-5" data-stage>
-    <div class="wrap sec-grid">
-      <header class="sec-label label">
-        <span><span class="no">04.5</span>&nbsp; <span data-i18n="lbl.stage">Stage</span> 5</span>
-        <div class="stage-fig"><svg class="sk sk--icon draw" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M14 100H106"/><path class="d" pathLength="1" style="--d:.3s" d="M38 26L42 68L40 100M42 68H80M80 68L82 100M42 75H80"/><path class="t d" pathLength="1" style="--d:.8s" d="M41 89H81"/><circle class="gf pop" style="--d:1s" cx="94" cy="32" r="4"/></svg></div>
-      </header>
-      <div class="sec-body">
-        <h2 class="stage-title" data-i18n="st5.name">Delivery</h2>
-        <p class="stage-sum" data-i18n="st5.sum">Dressing and handover.</p>
-        <div class="steps">
-          <details><summary data-i18n="st5.a.t">Dressing &amp; handover</summary><p data-i18n="st5.a.d">Once construction and carpentry are complete, we deliver and position every furnishing. We curate artwork and accessories, or use your existing treasures, to give each space your own signature.</p></details>
-        </div>
-        <dl class="outcome">
-          <div><dt class="label" data-i18n="lbl.receive">You receive</dt><dd data-i18n="st5.rec">Your space, dressed and ready to live in</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="register">
-    <div class="wrap sec-grid">
-      <header class="sec-label label"><span class="no">04.6</span><span data-i18n="rg.label">Document register</span></header>
-      <div class="sec-body">
-        <h2 class="h2" data-i18n="rg.title">Every document you receive, in order.</h2>
-        <p class="lead" data-i18n="rg.text">Nothing moves to the next stage on a handshake. Three of these carry your signature.</p>
-        <div class="register-wrap">
-          <table class="register">
-            <thead>
-              <tr><th data-i18n="rg.no">No.</th><th data-i18n="rg.doc">Document</th><th data-i18n="rg.stage">Stage</th><th data-i18n="rg.you">You</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>D-01</td><td data-i18n="rg1">Design brief</td><td data-i18n="st1.name">Discovery</td><td data-i18n="rg.approve">approve</td></tr>
-              <tr><td>D-02</td><td data-i18n="rg2">Site survey</td><td data-i18n="st1.name">Discovery</td><td data-i18n="rg.receive">receive</td></tr>
-              <tr><td>D-03</td><td data-i18n="rg3">Concept design and mood boards</td><td data-i18n="st1.name">Discovery</td><td data-i18n="rg.review">review</td></tr>
-              <tr><td>D-04</td><td data-i18n="rg4">Design Agreement</td><td data-i18n="st1.name">Discovery</td><td class="is-sign" data-i18n="rg.sign">sign</td></tr>
-              <tr><td>D-05</td><td data-i18n="rg5">Drawings and renders</td><td data-i18n="st2.name">Design</td><td data-i18n="rg.review">review</td></tr>
-              <tr><td>D-06</td><td data-i18n="rg6">Bill of quantities (BoQ)</td><td data-i18n="st2.name">Design</td><td data-i18n="rg.receive">receive</td></tr>
-              <tr><td>D-07</td><td data-i18n="rg7">Personalised budget estimate</td><td data-i18n="st2.name">Design</td><td data-i18n="rg.receive">receive</td></tr>
-              <tr><td>D-08</td><td data-i18n="rg8">Preparation of Plans Agreement</td><td data-i18n="st3.name">Documentation</td><td class="is-sign" data-i18n="rg.sign">sign</td></tr>
-              <tr><td>D-09</td><td data-i18n="rg9">Development drawings</td><td data-i18n="st3.name">Documentation</td><td data-i18n="rg.receive">receive</td></tr>
-              <tr><td>D-10</td><td data-i18n="rg10">Materials and specification</td><td data-i18n="st3.name">Documentation</td><td data-i18n="rg.choose">choose</td></tr>
-              <tr><td>D-11</td><td data-i18n="rg11">Fixed-price contract and cost plan</td><td data-i18n="st3.name">Documentation</td><td class="is-sign" data-i18n="rg.sign">sign</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec">
-    <div class="wrap sec-grid">
-      <header class="sec-label label"><span class="no">04.7</span><span data-i18n="op.eyebrow">Operating principle</span></header>
-      <div class="sec-body">
-        <h2 class="h2" data-i18n="op.title">One team, concept to completion.</h2>
-        <div class="prose">
-          <p data-i18n="op.text">Architecture, design, engineering, technology and project operations work as a single team on a single goal: yours. You get budget certainty and one point of accountability.</p>
-        </div>
-        <div class="cta-row"><a class="tl" href="why.html"><span data-i18n="op.link">Why work with us</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></div>
-      </div>
+      <ol class="pay">
+        <li><h3 class="h3" data-i18n="pay1.t">Design fee</h3><p data-i18n="pay1.d">When you sign the Design Agreement. It covers the site survey, the concept and the budget estimate.</p></li>
+        <li><h3 class="h3" data-i18n="pay2.t">Plans fee: 2% of the budget estimate</h3><p data-i18n="pay2.d">When you sign the plans agreement. It includes council and consultant fees.</p></li>
+        <li><h3 class="h3" data-i18n="pay3.t">Deposit</h3><p data-i18n="pay3.d">When you sign the fixed-price contract.</p></li>
+      </ol>
     </div>
   </section>
 
@@ -241,11 +149,10 @@
 
 <section class="cta-band">
   <div class="wrap">
-    <div class="cta-arch reveal">
-      <p class="motto" data-i18n="cta.quote">By our work shall you know us.</p>
-      <h2 class="h2" data-i18n="cta.title">Bring us a vision that hasn't been built.</h2>
-      <p class="lead" data-i18n="cta.text">Tell us about the property, its location and what you want to create. We will get back to you within a few days.</p>
-      <div class="cta-row"><a class="go" href="contact.html"><span class="go-ring"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span><span data-i18n="cta.btn">Tell us about your project</span></a></div>
+    <div class="cta-arch">
+      <h2 class="h2" data-i18n="cta.title">Your home isn't on this site. It hasn't been built yet.</h2>
+      <p class="lead" data-i18n="cta.text">Tell us where it is and what you want. We reply within a few days.</p>
+      <div class="cta-row"><a class="go" href="contact.html"><span class="go-ring"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span><span data-i18n="cta.btn">Start a project</span></a></div>
     </div>
   </div>
 </section>
@@ -262,10 +169,9 @@
         <h2 class="label" data-i18n="footer.explore">Explore</h2>
         <ul>
           <li><a href="index.html" data-nav="home" data-i18n="nav.home">Home</a></li>
-          <li><a href="story.html" data-nav="story" data-i18n="nav.story">Our Story</a></li>
+          <li><a href="story.html" data-nav="story" data-i18n="nav.story">About</a></li>
           <li><a href="services.html" data-nav="services" data-i18n="nav.services">Services</a></li>
-          <li><a href="process.html" data-nav="process" data-i18n="nav.process">How We Work</a></li>
-          <li><a href="why.html" data-nav="why" data-i18n="nav.why">Why Unbound</a></li>
+          <li><a href="process.html" data-nav="process" data-i18n="nav.process">How it works</a></li>
           <li><a href="contact.html" data-nav="contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>

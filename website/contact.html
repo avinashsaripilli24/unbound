@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Contact | studio Unbound</title>
-<meta name="description" content="Tell us about your project: the property, its location and what you want to create. We will get back to you within a few days.">
+<meta name="description" content="Tell us where your property is and what you want to build. We reply within a few days.">
 <meta name="theme-color" content="#141615">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="studio Unbound">
 <meta property="og:title" content="Contact | studio Unbound">
-<meta property="og:description" content="Tell us about your project: the property, its location and what you want to create. We will get back to you within a few days.">
+<meta property="og:description" content="Tell us where your property is and what you want to build. We reply within a few days.">
 <meta property="og:image" content="assets/img/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
@@ -29,6 +29,7 @@
     <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width=".7"/></pattern>
     <pattern id="hatch-chalk" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#ECE9E2" stroke-width=".9"/></pattern>
     <pattern id="dotgrid" x="10" y="10" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="currentColor"/></pattern>
+    <filter id="pencil" x="-8%" y="-8%" width="116%" height="116%"><feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G"/></filter>
     <filter id="chalk" x="-4%" y="-4%" width="108%" height="108%"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter>
   </defs>
 </svg>
@@ -40,11 +41,10 @@
       <span class="logo-tag">design &amp; build</span>
     </a>
     <nav class="nav" id="nav" aria-label="Primary">
-      <a href="story.html" data-nav="story" data-no="02"><span data-i18n="nav.story">Our Story</span></a>
-      <a href="services.html" data-nav="services" data-no="03"><span data-i18n="nav.services">Services</span></a>
-      <a href="process.html" data-nav="process" data-no="04"><span data-i18n="nav.process">How We Work</span></a>
-      <a href="why.html" data-nav="why" data-no="05"><span data-i18n="nav.why">Why Unbound</span></a>
-      <a class="nav-cta" href="contact.html" data-nav="contact" data-no="06"><span data-i18n="nav.cta">Begin a project</span></a>
+      <a href="story.html" data-nav="story"><span data-i18n="nav.story">About</span></a>
+      <a href="services.html" data-nav="services"><span data-i18n="nav.services">Services</span></a>
+      <a href="process.html" data-nav="process"><span data-i18n="nav.process">How it works</span></a>
+      <a class="nav-cta" href="contact.html" data-nav="contact"><span data-i18n="nav.cta">Start a project</span></a>
     </nav>
     <div class="lang">
       <button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="Choose language" data-i18n-attr="aria-label:ui.lang">
@@ -66,114 +66,92 @@
 
 <main id="main">
 
-  <section class="page-hero">
-    <div class="wrap">
-      <p class="label"><span class="no">06</span><span data-i18n="ct.eyebrow">Contact</span></p>
+  <section class="page-head">
+    <div class="wrap col center">
       <h1 class="display display--page" data-i18n="ct.title">Tell us about your project.</h1>
-      <p class="lead" data-i18n="ct.lead">Send us a brief description of the property, its location and what you want to create. We will get back to you within a few days.</p>
+      <p class="lead" data-i18n="ct.lead">A few lines are enough. We reply within a few days.</p>
     </div>
   </section>
 
   <div class="wrap contact-grid">
 
     <div>
-      <div class="brief">
-        <div class="brief-head label">
-          <span data-i18n="bf.title">Project brief</span>
-          <span><span data-i18n="bf.sheet">Sheet</span> <span class="no">01</span></span>
-          <span class="no" data-today></span>
+      <form class="form" id="enquiry">
+        <div class="field">
+          <label for="f-name" data-i18n="f.name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
         </div>
-        <form class="form" id="enquiry">
-          <div class="field field--l">
-            <label for="f-name"><span class="label" data-i18n="f.name">Your name</span></label>
-            <input id="f-name" name="name" type="text" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="f-phone"><span class="label" data-i18n="f.phone">Phone or WhatsApp</span></label>
-            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
-          </div>
-          <div class="field field--l">
-            <label for="f-email"><span class="label" data-i18n="f.email">Email</span><small data-i18n="f.optional">optional</small></label>
-            <input id="f-email" name="email" type="email" autocomplete="email">
-          </div>
-          <div class="field">
-            <label for="f-location"><span class="label" data-i18n="f.location">Where is the property?</span></label>
-            <input id="f-location" name="location" type="text" required placeholder="City, area" data-i18n-attr="placeholder:f.location.ph">
-          </div>
-          <div class="field field--full">
-            <label for="f-interest"><span class="label" data-i18n="f.interest">What are you looking for?</span><small data-i18n="f.optional">optional</small></label>
-            <select id="f-interest" name="interest">
-              <option value="" data-i18n="f.o.none">Choose one</option>
-              <option value="new" data-i18n="f.o.new">A new home or building</option>
-              <option value="alter" data-i18n="f.o.alter">An addition, alteration or repair</option>
-              <option value="interiors" data-i18n="f.o.interiors">Interiors</option>
-              <option value="joinery" data-i18n="f.o.joinery">Joinery &amp; cabinetry</option>
-              <option value="living" data-i18n="f.o.living">Furniture</option>
-              <option value="acoustics" data-i18n="f.o.acoustics">Audio &amp; video</option>
-              <option value="illume" data-i18n="f.o.illume">Lighting &amp; automation</option>
-              <option value="earth" data-i18n="f.o.earth">Sustainable systems</option>
-              <option value="decor" data-i18n="f.o.decor">Decor &amp; styling</option>
-              <option value="custom" data-i18n="f.o.custom">Custom works</option>
-              <option value="other" data-i18n="f.o.other">Something else</option>
-            </select>
-          </div>
-          <div class="field field--full">
-            <label for="f-property"><span class="label" data-i18n="f.property">About the property</span><small data-i18n="f.optional">optional</small></label>
-            <textarea id="f-property" name="property" rows="3" placeholder="Plot or built-up area, new or existing, anything we should know" data-i18n-attr="placeholder:f.property.ph"></textarea>
-          </div>
-          <div class="field field--full">
-            <label for="f-vision"><span class="label" data-i18n="f.vision">What do you want to create?</span></label>
-            <textarea id="f-vision" name="vision" rows="4" required placeholder="In your own words. It does not need to be polished." data-i18n-attr="placeholder:f.vision.ph"></textarea>
-          </div>
-          <div class="hp" aria-hidden="true"><label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
-          <div class="field--full form-actions">
-            <button class="go" type="submit" data-send><span class="go-ring"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span><span data-i18n="f.send">Send enquiry</span></button>
-            <button class="tl" type="button" data-send-wa hidden><span data-i18n="f.wa">Send on WhatsApp instead</span></button>
-          </div>
-          <p class="field--full form-note" data-i18n="f.note">We use these details only to reply to your enquiry.</p>
-        </form>
-      </div>
-      <div class="form-status form-status--ok" data-status="ok" role="status" hidden><strong data-i18n="f.ok.t">Thank you. Your note is with us.</strong><span data-i18n="f.ok.d">We will get back to you within a few days.</span></div>
+        <div class="field">
+          <label for="f-phone" data-i18n="f.phone">Phone or WhatsApp</label>
+          <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+        </div>
+        <div class="field field--full">
+          <label for="f-location" data-i18n="f.location">Where is the property?</label>
+          <input id="f-location" name="location" type="text" required placeholder="City, area" data-i18n-attr="placeholder:f.location.ph">
+        </div>
+        <div class="field field--full">
+          <label for="f-vision" data-i18n="f.vision">What do you want to build?</label>
+          <textarea id="f-vision" name="vision" rows="4" required placeholder="In your own words." data-i18n-attr="placeholder:f.vision.ph"></textarea>
+        </div>
+        <div class="field">
+          <label for="f-interest"><span data-i18n="f.interest">What do you need?</span> <small data-i18n="f.optional">optional</small></label>
+          <select id="f-interest" name="interest">
+            <option value="" data-i18n="f.o.none">Choose one</option>
+            <option value="new" data-i18n="f.o.new">A new home or building</option>
+            <option value="alter" data-i18n="f.o.alter">An addition, alteration or repair</option>
+            <option value="interiors" data-i18n="f.o.interiors">Interiors</option>
+            <option value="joinery" data-i18n="f.o.joinery">Cabinets and woodwork</option>
+            <option value="living" data-i18n="f.o.living">Furniture</option>
+            <option value="acoustics" data-i18n="f.o.acoustics">Sound and video</option>
+            <option value="illume" data-i18n="f.o.illume">Lighting and automation</option>
+            <option value="earth" data-i18n="f.o.earth">Sustainable systems</option>
+            <option value="decor" data-i18n="f.o.decor">Decor and styling</option>
+            <option value="custom" data-i18n="f.o.custom">Something unusual</option>
+            <option value="other" data-i18n="f.o.other">Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-email"><span data-i18n="f.email">Email</span> <small data-i18n="f.optional">optional</small></label>
+          <input id="f-email" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="hp" aria-hidden="true"><label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+        <div class="field--full form-actions">
+          <button class="go" type="submit" data-send><span class="go-ring"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span><span data-i18n="f.send">Send</span></button>
+          <button class="tl" type="button" data-send-wa hidden><span data-i18n="f.wa">Send on WhatsApp instead</span></button>
+        </div>
+        <p class="field--full form-note" data-i18n="f.note">We use these details only to reply to you.</p>
+      </form>
+      <div class="form-status form-status--ok" data-status="ok" role="status" hidden><strong data-i18n="f.ok.t">Thank you. Your note is with us.</strong><span data-i18n="f.ok.d">We will reply within a few days.</span></div>
       <div class="form-status" data-status="err" role="alert" hidden><span data-i18n="f.err">Something went wrong and your note was not sent. Please try again, or reach us directly.</span></div>
-      <div class="form-status" data-status="off" role="alert" hidden><span data-i18n="f.off">The enquiry form is not connected yet. Please reach us directly for now.</span></div>
+      <div class="form-status" data-status="off" role="alert" hidden><span data-i18n="f.off">This form is not connected yet. Please reach us directly for now.</span></div>
     </div>
 
-    <aside>
-      <div class="aside-block">
-        <span class="label" data-i18n="nx.eyebrow">What happens next</span>
-        <ol class="next">
-          <li data-i18n="nx1">We read your note and reply within a few days.</li>
-          <li data-i18n="nx2">A first conversation, with no obligation.</li>
-          <li data-i18n="nx3">A consultation meeting, where your design brief begins.</li>
-        </ol>
-      </div>
-      <div class="aside-block">
-        <span class="label" data-i18n="dr.eyebrow">Reach us directly</span>
-        <ul class="reach">
-          <li data-contact-row hidden><span class="label" data-i18n="dr.phone">Call</span><a data-contact="phone" href="#"><span data-contact-text></span></a></li>
-          <li data-contact-row hidden><span class="label">WhatsApp</span><a data-contact="whatsapp" href="#"><span data-contact-text></span></a></li>
-          <li data-contact-row hidden><span class="label" data-i18n="dr.email">Email</span><a data-contact="email" href="#"><span data-contact-text></span></a></li>
-          <li><span class="label" data-i18n="dr.studio">Studio</span><span data-i18n="footer.place">Visakhapatnam, Andhra Pradesh, India</span></li>
-        </ul>
-      </div>
-      <p class="motto" style="margin-top:32px" data-i18n="ct.goal">Our goal is simple: for you to love where you live.</p>
+    <aside class="aside">
+      <h2 class="h3" data-i18n="nx.title">What happens next</h2>
+      <ol class="next">
+        <li data-i18n="nx1">We read your note and reply within a few days.</li>
+        <li data-i18n="nx2">We talk. There is no obligation.</li>
+        <li data-i18n="nx3">We meet and start your design brief.</li>
+      </ol>
+      <h2 class="h3" style="margin-top:36px" data-i18n="dr.title">Reach us directly</h2>
+      <ul class="reach">
+        <li data-contact-row hidden><span data-i18n="dr.phone">Call</span><a data-contact="phone" href="#"><span data-contact-text></span></a></li>
+        <li data-contact-row hidden><span>WhatsApp</span><a data-contact="whatsapp" href="#"><span data-contact-text></span></a></li>
+        <li data-contact-row hidden><span data-i18n="dr.email">Email</span><a data-contact="email" href="#"><span data-contact-text></span></a></li>
+        <li><span data-i18n="dr.studio">Studio</span><span data-i18n="footer.place">Visakhapatnam, Andhra Pradesh, India</span></li>
+      </ul>
     </aside>
 
   </div>
 
-  <section class="sec">
-    <div class="wrap sec-grid">
-      <header class="sec-label label"><span class="no">06.1</span><span data-i18n="fq.label">Before you write</span></header>
-      <div class="sec-body">
-        <h2 class="h2" data-i18n="fq.title">Questions people ask us first.</h2>
-        <div class="faq">
-          <details><summary data-i18n="fq1.q">What happens after I write to you?</summary><p data-i18n="fq1.a">We read your note and reply within a few days. Then comes a first conversation, with no obligation, and after that a consultation meeting where we write your design brief together.</p></details>
-          <details><summary data-i18n="fq2.q">When do I pay, and for what?</summary><p data-i18n="fq2.a">At three points, each stated before it is due. A design fee when you sign the Design Agreement, covering the site survey, proof-of-concept design and a budget estimate. A plans fee of 2% of the budget estimate when you sign the Preparation of Plans Agreement, which includes council and consultant fees through the design process. A deposit when you sign the fixed-price contract.</p></details>
-          <details><summary data-i18n="fq3.q">Is the budget estimate the final price?</summary><p data-i18n="fq3.a">No. The estimate is there to help you decide whether to go ahead. The price you sign is the fixed-price contract, prepared from the drawings and specifications you select and costed room by room.</p></details>
-          <details><summary data-i18n="fq4.q">I already have drawings. Can you take it from there?</summary><p data-i18n="fq4.a">Yes. Whether you are starting from scratch or already have a design developed, we can work from where you are.</p></details>
-          <details><summary data-i18n="fq5.q">Why can't I see your past projects here?</summary><p data-i18n="fq5.a">It is deliberate. Every project we take on starts from zero, shaped by the people and the place, so yours will not look like anyone else's. We would rather show you how we think, draw and build, and answer the rest in person.</p></details>
-          <details><summary data-i18n="fq6.q">Who will I be dealing with?</summary><p data-i18n="fq6.a">One team from concept to completion: architects, engineers and kaarigars, with a single point of accountability.</p></details>
-        </div>
+  <section class="screen">
+    <div class="wrap col">
+      <h2 class="h2 center" data-i18n="fq.title">Common questions</h2>
+      <div class="faq">
+        <details><summary data-i18n="fq1.q">What happens after I write to you?</summary><p data-i18n="fq1.a">We reply within a few days. Then we talk, with no obligation. After that we meet and write your design brief together.</p></details>
+        <details><summary data-i18n="fq2.q">Is the budget estimate the final price?</summary><p data-i18n="fq2.a">No. The estimate helps you decide whether to go ahead. The final price is the fixed-price contract you sign before building starts.</p></details>
+        <details><summary data-i18n="fq3.q">I already have drawings. Can you build from them?</summary><p data-i18n="fq3.a">Yes. Start from nothing or bring your own design. We work from where you are.</p></details>
+        <details><summary data-i18n="fq4.q">Why are there no past projects on this site?</summary><p data-i18n="fq4.a">On purpose. Every project starts from zero, so yours will not look like anyone else's. We would rather show you how we work.</p></details>
       </div>
     </div>
   </section>
@@ -192,10 +170,9 @@
         <h2 class="label" data-i18n="footer.explore">Explore</h2>
         <ul>
           <li><a href="index.html" data-nav="home" data-i18n="nav.home">Home</a></li>
-          <li><a href="story.html" data-nav="story" data-i18n="nav.story">Our Story</a></li>
+          <li><a href="story.html" data-nav="story" data-i18n="nav.story">About</a></li>
           <li><a href="services.html" data-nav="services" data-i18n="nav.services">Services</a></li>
-          <li><a href="process.html" data-nav="process" data-i18n="nav.process">How We Work</a></li>
-          <li><a href="why.html" data-nav="why" data-i18n="nav.why">Why Unbound</a></li>
+          <li><a href="process.html" data-nav="process" data-i18n="nav.process">How it works</a></li>
           <li><a href="contact.html" data-nav="contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>

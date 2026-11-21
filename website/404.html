@@ -29,6 +29,7 @@
     <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width=".7"/></pattern>
     <pattern id="hatch-chalk" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#ECE9E2" stroke-width=".9"/></pattern>
     <pattern id="dotgrid" x="10" y="10" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="currentColor"/></pattern>
+    <filter id="pencil" x="-8%" y="-8%" width="116%" height="116%"><feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G"/></filter>
     <filter id="chalk" x="-4%" y="-4%" width="108%" height="108%"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter>
   </defs>
 </svg>
@@ -40,11 +41,10 @@
       <span class="logo-tag">design &amp; build</span>
     </a>
     <nav class="nav" id="nav" aria-label="Primary">
-      <a href="story.html" data-nav="story" data-no="02"><span data-i18n="nav.story">Our Story</span></a>
-      <a href="services.html" data-nav="services" data-no="03"><span data-i18n="nav.services">Services</span></a>
-      <a href="process.html" data-nav="process" data-no="04"><span data-i18n="nav.process">How We Work</span></a>
-      <a href="why.html" data-nav="why" data-no="05"><span data-i18n="nav.why">Why Unbound</span></a>
-      <a class="nav-cta" href="contact.html" data-nav="contact" data-no="06"><span data-i18n="nav.cta">Begin a project</span></a>
+      <a href="story.html" data-nav="story"><span data-i18n="nav.story">About</span></a>
+      <a href="services.html" data-nav="services"><span data-i18n="nav.services">Services</span></a>
+      <a href="process.html" data-nav="process"><span data-i18n="nav.process">How it works</span></a>
+      <a class="nav-cta" href="contact.html" data-nav="contact"><span data-i18n="nav.cta">Start a project</span></a>
     </nav>
     <div class="lang">
       <button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="Choose language" data-i18n-attr="aria-label:ui.lang">
@@ -67,14 +67,13 @@
 <main id="main">
   <section class="lost">
     <div class="wrap">
-      <svg class="sk draw" viewBox="0 0 120 120" aria-hidden="true">
+      <svg class="sk draw" filter="url(#pencil)" viewBox="0 0 120 120" aria-hidden="true">
         <path class="d" pathLength="1" d="M10 104H110"/>
         <path class="d" pathLength="1" style="--d:.4s" d="M38 104V54A22 22 0 0 1 82 54V104"/>
         <circle class="gf pop" style="--d:1s" cx="60" cy="104" r="4.5"/>
       </svg>
-      <p class="label"><span class="no">404</span></p>
-      <h1 class="h2" style="margin-top:10px" data-i18n="lost.title">This page hasn't been built yet.</h1>
-      <p class="lead" data-i18n="lost.text">Let's take you back to the threshold.</p>
+      <h1 class="h2" data-i18n="lost.title">This page hasn't been built yet.</h1>
+      <p class="lead" data-i18n="lost.text">Let's take you back to the start.</p>
       <div class="cta-row"><a class="go" href="index.html"><span class="go-ring"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span><span data-i18n="lost.btn">Back to home</span></a></div>
     </div>
   </section>
@@ -92,10 +91,9 @@
         <h2 class="label" data-i18n="footer.explore">Explore</h2>
         <ul>
           <li><a href="index.html" data-nav="home" data-i18n="nav.home">Home</a></li>
-          <li><a href="story.html" data-nav="story" data-i18n="nav.story">Our Story</a></li>
+          <li><a href="story.html" data-nav="story" data-i18n="nav.story">About</a></li>
           <li><a href="services.html" data-nav="services" data-i18n="nav.services">Services</a></li>
-          <li><a href="process.html" data-nav="process" data-i18n="nav.process">How We Work</a></li>
-          <li><a href="why.html" data-nav="why" data-i18n="nav.why">Why Unbound</a></li>
+          <li><a href="process.html" data-nav="process" data-i18n="nav.process">How it works</a></li>
           <li><a href="contact.html" data-nav="contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>

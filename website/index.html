@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>studio Unbound | design &amp; build, Visakhapatnam</title>
-<meta name="description" content="studio Unbound is a design and build studio of architects, artisans, builders and engineers in Visakhapatnam. Bring us a vision that has not been built.">
+<meta name="description" content="A design and build studio in Visakhapatnam. Bring us an idea that has not been built: we draw it, then we build it.">
 <meta name="theme-color" content="#141615">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="studio Unbound">
 <meta property="og:title" content="studio Unbound | design &amp; build, Visakhapatnam">
-<meta property="og:description" content="studio Unbound is a design and build studio of architects, artisans, builders and engineers in Visakhapatnam. Bring us a vision that has not been built.">
+<meta property="og:description" content="A design and build studio in Visakhapatnam. Bring us an idea that has not been built: we draw it, then we build it.">
 <meta property="og:image" content="assets/img/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
@@ -29,6 +29,7 @@
     <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width=".7"/></pattern>
     <pattern id="hatch-chalk" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#ECE9E2" stroke-width=".9"/></pattern>
     <pattern id="dotgrid" x="10" y="10" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="currentColor"/></pattern>
+    <filter id="pencil" x="-8%" y="-8%" width="116%" height="116%"><feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G"/></filter>
     <filter id="chalk" x="-4%" y="-4%" width="108%" height="108%"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter>
   </defs>
 </svg>
@@ -40,11 +41,10 @@
       <span class="logo-tag">design &amp; build</span>
     </a>
     <nav class="nav" id="nav" aria-label="Primary">
-      <a href="story.html" data-nav="story" data-no="02"><span data-i18n="nav.story">Our Story</span></a>
-      <a href="services.html" data-nav="services" data-no="03"><span data-i18n="nav.services">Services</span></a>
-      <a href="process.html" data-nav="process" data-no="04"><span data-i18n="nav.process">How We Work</span></a>
-      <a href="why.html" data-nav="why" data-no="05"><span data-i18n="nav.why">Why Unbound</span></a>
-      <a class="nav-cta" href="contact.html" data-nav="contact" data-no="06"><span data-i18n="nav.cta">Begin a project</span></a>
+      <a href="story.html" data-nav="story"><span data-i18n="nav.story">About</span></a>
+      <a href="services.html" data-nav="services"><span data-i18n="nav.services">Services</span></a>
+      <a href="process.html" data-nav="process"><span data-i18n="nav.process">How it works</span></a>
+      <a class="nav-cta" href="contact.html" data-nav="contact"><span data-i18n="nav.cta">Start a project</span></a>
     </nav>
     <div class="lang">
       <button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="Choose language" data-i18n-attr="aria-label:ui.lang">
@@ -96,18 +96,18 @@
         </svg>
       </figure>
       <div class="hero-copy">
-        <p class="label tagline">design &amp; build · <span data-i18n="h.place">Visakhapatnam</span></p>
+        <p class="kicker">design &amp; build · <span data-i18n="h.place">Visakhapatnam</span></p>
         <h1 class="display" data-i18n="h.title">Let's begin with a clean slate.</h1>
-        <p class="lead" data-i18n="h.lead">Every space begins as a gesture: a line, a dot, a circle, an opening. We draw it properly. Then we build it.</p>
+        <p class="lead" data-i18n="h.lead">Bring us an idea that hasn't been built. We draw it, then we build it.</p>
         <div class="cta-row">
-          <a class="go" href="contact.html"><span class="go-ring"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span><span data-i18n="h.cta1">Bring us your vision</span></a>
-          <a class="tl" href="process.html"><span data-i18n="h.cta2">How we work</span></a>
+          <a class="go" href="contact.html"><span class="go-ring"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span><span data-i18n="h.cta1">Start a project</span></a>
+          <a class="tl" href="process.html"><span data-i18n="h.cta2">See how it works</span></a>
         </div>
         <div class="slate-tools">
           <span class="slate-hint">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 14l1-4 8-8 3 3-8 8zM9.5 3.5l3 3"/></svg>
-            <span class="hint-mouse" data-i18n="slate.hint">This slate works. Draw a line, a circle or an arch.</span>
-            <span class="hint-touch" data-i18n="slate.touch">This slate works. Drag sideways to draw, or tap for a dot.</span>
+            <span class="hint-mouse" data-i18n="slate.hint">Try it. Draw a line, a circle or an arch.</span>
+            <span class="hint-touch" data-i18n="slate.touch">Try it. Drag sideways to draw, or tap.</span>
           </span>
           <button class="slate-clear" type="button" data-slate-clear hidden data-i18n="slate.clear">Clean slate</button>
         </div>
@@ -115,167 +115,133 @@
     </div>
   </section>
 
-  <section class="sec">
-    <div class="wrap sec-grid">
-      <header class="sec-label label"><span class="no">01.1</span><span data-i18n="m.label">Why we draw</span></header>
-      <div class="sec-body">
-        <p class="h2" data-i18n="m.p2">It's time to create spaces around how we want to live, not how we have to.</p>
-        <div class="prose">
-          <p data-i18n="m.p1">Let's look at our world together. The one we often take for granted. The one where we love what we do, and want to love where we do it.</p>
-        </div>
-        <p class="dim" aria-hidden="true"><span data-measure>1 : 1</span></p>
+  <section class="screen">
+    <div class="wrap">
+      <div class="col center">
+        <h2 class="h2" data-i18n="w.title">We design it. Then we build it.</h2>
+        <p class="lead" data-i18n="w.lead">Architects, engineers and craftspeople, working as one team.</p>
       </div>
+      <ul class="trio">
+        <li>
+          <div class="trio-art"><svg class="sk sk--icon draw" filter="url(#pencil)" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M50 82H24V30H92V82H66"/><path class="a d" pathLength="1" style="--d:.5s" d="M50 82V66A16 16 0 0 1 66 82"/><path class="t d" pathLength="1" style="--d:.8s" d="M24 98H92M24 94V102M92 94V102M106 30V82M102 30H110M102 82H110"/></svg></div>
+          <div><h3 class="h3" data-i18n="w1.t">Design</h3><p data-i18n="w1.d">Plans and interiors, drawn for you and your site.</p></div>
+        </li>
+        <li>
+          <div class="trio-art"><svg class="sk sk--icon draw" filter="url(#pencil)" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M18 34H102V86H18Z"/><path class="a d" pathLength="1" style="--d:.5s" d="M56 34V40L72 37V55L56 51V69L72 65V83L56 80V86"/><path class="t d" pathLength="1" style="--d:.9s" d="M24 46H48M24 60H50M24 74H48M82 40V80M92 40V80"/></svg></div>
+          <div><h3 class="h3" data-i18n="w2.t">Build</h3><p data-i18n="w2.d">We construct it ourselves, from start to finish.</p></div>
+        </li>
+        <li>
+          <div class="trio-art"><svg class="sk sk--icon draw" filter="url(#pencil)" viewBox="0 0 120 120" aria-hidden="true"><path class="d" pathLength="1" d="M14 100H106"/><path class="d" pathLength="1" style="--d:.3s" d="M38 26L42 68L40 100M42 68H80M80 68L82 100M42 75H80"/><path class="t d" pathLength="1" style="--d:.8s" d="M41 89H81"/><circle class="gf pop" style="--d:1s" cx="94" cy="32" r="4"/></svg></div>
+          <div><h3 class="h3" data-i18n="w3.t">Furnish</h3><p data-i18n="w3.d">Furniture, lighting and styling, made to order.</p></div>
+        </li>
+      </ul>
+      <p class="more-link"><a class="tl" href="services.html"><span data-i18n="w.link">See our services</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></p>
     </div>
   </section>
 
-  <section class="sec">
-    <div class="wrap sec-grid">
-      <header class="sec-label label"><span class="no">01.2</span><span data-i18n="th.eyebrow">From idea to object</span></header>
-      <div class="sec-body">
-        <h2 class="h2" data-i18n="th.title">One doorway, from the first line to the last joint.</h2>
-        <p class="lead" data-i18n="th.text">There are no finished projects on this page. Scroll, and watch what happens to an idea in our hands.</p>
-        <div class="evolve" data-evolve style="margin-top:clamp(32px,5vw,56px)">
-          <div class="evolve-sheet">
-            <div class="evolve-art">
-              <svg class="sk ev" viewBox="0 0 600 568" role="img" aria-label="One arched doorway, shown first as a loose sketch, then a measured drawing, a material study, a joinery detail and the finished object.">
-                <g data-at="5">
-                  <path class="wallfill" fill-rule="evenodd" d="M108 60H492V492H108ZM228 492V228A72 72 0 0 1 372 228V492Z"/>
-                  <path class="doorfill" d="M234 492V228A66 66 0 0 1 366 228V492Z"/>
-                  <path class="lite" d="M228 494H372L330 556H186Z"/>
-                </g>
-                <g data-at="3">
-                  <path class="h" fill="url(#hatch)" fill-rule="evenodd" d="M108 60H492V492H108ZM228 492V228A72 72 0 0 1 372 228V492Z"/>
-                </g>
-                <g data-at="1" class="pencil">
-                  <path class="d" pathLength="1" d="M70 494C200 488 380 498 540 490"/>
-                  <path class="d" pathLength="1" style="--d:.5s" d="M112 492C108 340 110 180 114 64C240 56 380 62 490 58C494 200 490 380 494 490"/>
-                  <path class="d" pathLength="1" style="--d:1.2s" d="M226 494C224 400 222 300 232 226C244 150 352 146 366 224C376 300 372 400 374 496"/>
-                </g>
-                <g data-at="2">
-                  <path class="d" pathLength="1" d="M56 492H544"/>
-                  <path class="d" pathLength="1" style="--d:.2s" d="M108 492V60H492V492"/>
-                  <path class="d" pathLength="1" style="--d:.7s" d="M228 492V228A72 72 0 0 1 372 228V492"/>
-                  <g class="anno">
-                    <path class="cl" d="M300 44V512M204 228H396"/>
-                    <path class="tech" d="M108 34H492M108 26V44M492 26V44M103 39L113 29M487 39L497 29"/>
-                    <text x="300" y="24" text-anchor="middle">2400</text>
-                    <path class="tech" d="M72 60V492M64 60H82M64 492H82M67 65L77 55M67 497L77 487"/>
-                    <text x="60" y="276" text-anchor="middle" transform="rotate(-90 60 276)">2700</text>
-                    <path class="tech" d="M528 156V492M518 156H536M518 492H536M523 161L533 151M523 497L533 487"/>
-                    <text x="548" y="324" text-anchor="middle" transform="rotate(-90 548 324)">2100</text>
-                    <path class="tech" d="M228 528H372M228 518V536M372 518V536M223 533L233 523M367 533L377 523"/>
-                    <text x="300" y="550" text-anchor="middle">900</text>
-                    <path class="tech" d="M300 228L351 177"/>
-                    <text class="halo" x="318" y="198">R 450</text>
-                  </g>
-                </g>
-                <g data-at="3">
-                  <path class="a d" pathLength="1" d="M234 492V228A66 66 0 0 1 366 228V492"/>
-                  <path class="a t" d="M256 179V492M278 166V492M300 162V492M322 166V492M344 179V492"/>
-                  <path class="d" pathLength="1" style="--d:.4s" d="M216 492H384V504H216Z"/>
-                  <g class="anno">
-                    <path class="tech" d="M150 178V132M334 360H404M384 498L428 514"/>
-                    <circle class="tf" cx="150" cy="180" r="2.2"/>
-                    <circle class="tf" cx="334" cy="360" r="2.2"/>
-                    <circle class="tf" cx="384" cy="498" r="2.2"/>
-                    <text class="halo" x="150" y="122" text-anchor="middle" data-i18n="ev.plaster">plaster</text>
-                    <text class="halo" x="410" y="364" data-i18n="ev.timber">timber</text>
-                    <text class="halo" x="434" y="520" data-i18n="ev.stone">stone</text>
-                  </g>
-                </g>
-                <g data-at="4" class="anno">
-                  <circle class="tech" cx="372" cy="228" r="13"/>
-                  <path class="tech" d="M381 219L410 190"/>
-                  <circle class="bubble" cx="450" cy="150" r="58"/>
-                  <path class="a d" pathLength="1" d="M440 104V196M462 104V196"/>
-                  <path class="a d" pathLength="1" style="--d:.3s" d="M402 138H440M402 164H440"/>
-                  <path class="a dsh" d="M440 144H456V158H440"/>
-                  <circle class="gf" cx="449" cy="151" r="2.6"/>
-                  <text class="halo" x="450" y="82" text-anchor="middle" data-i18n="ev.detail">detail A, joinery</text>
-                </g>
-                <g data-at="5">
-                  <circle class="gf" cx="350" cy="372" r="5"/>
-                </g>
-              </svg>
-            </div>
-            <dl class="titleblock">
-              <div><dt data-i18n="tb.drawing">Drawing</dt><dd data-i18n="tb.name">Arched opening</dd></div>
-              <div><dt data-i18n="tb.stage">Stage</dt><dd data-evolve-stage>1 / 5</dd></div>
-              <div><dt data-i18n="tb.scale">Scale</dt><dd>1 : 20</dd></div>
-            </dl>
+  <section class="screen">
+    <div class="wrap">
+      <div class="player" data-player>
+        <div class="player-art">
+          <svg class="sk ev" viewBox="0 0 600 568" role="img" aria-label="One arched doorway, shown first as a loose sketch, then a measured drawing, a material study, a joinery detail and the finished object.">
+            <g data-at="5">
+              <path class="wallfill" fill-rule="evenodd" d="M108 60H492V492H108ZM228 492V228A72 72 0 0 1 372 228V492Z"/>
+              <path class="doorfill" d="M234 492V228A66 66 0 0 1 366 228V492Z"/>
+              <path class="lite" d="M228 494H372L330 556H186Z"/>
+            </g>
+            <g data-at="3">
+              <path class="h" fill="url(#hatch)" fill-rule="evenodd" d="M108 60H492V492H108ZM228 492V228A72 72 0 0 1 372 228V492Z"/>
+            </g>
+            <g data-at="1" class="pencil">
+              <path class="d" pathLength="1" d="M70 494C200 488 380 498 540 490"/>
+              <path class="d" pathLength="1" style="--d:.5s" d="M112 492C108 340 110 180 114 64C240 56 380 62 490 58C494 200 490 380 494 490"/>
+              <path class="d" pathLength="1" style="--d:1.2s" d="M226 494C224 400 222 300 232 226C244 150 352 146 366 224C376 300 372 400 374 496"/>
+            </g>
+            <g data-at="2">
+              <path class="d" pathLength="1" d="M56 492H544"/>
+              <path class="d" pathLength="1" style="--d:.2s" d="M108 492V60H492V492"/>
+              <path class="d" pathLength="1" style="--d:.7s" d="M228 492V228A72 72 0 0 1 372 228V492"/>
+              <g class="anno">
+                <path class="cl" d="M300 44V512M204 228H396"/>
+                <path class="tech" d="M108 34H492M108 26V44M492 26V44M103 39L113 29M487 39L497 29"/>
+                <text x="300" y="24" text-anchor="middle">2400</text>
+                <path class="tech" d="M72 60V492M64 60H82M64 492H82M67 65L77 55M67 497L77 487"/>
+                <text x="60" y="276" text-anchor="middle" transform="rotate(-90 60 276)">2700</text>
+                <path class="tech" d="M528 156V492M518 156H536M518 492H536M523 161L533 151M523 497L533 487"/>
+                <text x="548" y="324" text-anchor="middle" transform="rotate(-90 548 324)">2100</text>
+                <path class="tech" d="M228 528H372M228 518V536M372 518V536M223 533L233 523M367 533L377 523"/>
+                <text x="300" y="550" text-anchor="middle">900</text>
+                <path class="tech" d="M300 228L351 177"/>
+                <text class="halo" x="318" y="198">R 450</text>
+              </g>
+            </g>
+            <g data-at="3">
+              <path class="a d" pathLength="1" d="M234 492V228A66 66 0 0 1 366 228V492"/>
+              <path class="a t" d="M256 179V492M278 166V492M300 162V492M322 166V492M344 179V492"/>
+              <path class="d" pathLength="1" style="--d:.4s" d="M216 492H384V504H216Z"/>
+            </g>
+            <g data-at="4" class="anno">
+              <circle class="tech" cx="372" cy="228" r="13"/>
+              <path class="tech" d="M381 219L410 190"/>
+              <circle class="bubble" cx="450" cy="150" r="58"/>
+              <path class="a d" pathLength="1" d="M440 104V196M462 104V196"/>
+              <path class="a d" pathLength="1" style="--d:.3s" d="M402 138H440M402 164H440"/>
+              <path class="a dsh" d="M440 144H456V158H440"/>
+              <circle class="gf" cx="449" cy="151" r="2.6"/>
+            </g>
+            <g data-at="5">
+              <circle class="gf" cx="350" cy="372" r="5"/>
+            </g>
+          </svg>
+        </div>
+        <div class="player-side">
+          <h2 class="h2" data-i18n="ev.title">From first sketch to finished door.</h2>
+          <div class="player-tabs" role="group" aria-label="Steps">
+            <button type="button" data-go="1">1</button>
+            <button type="button" data-go="2">2</button>
+            <button type="button" data-go="3">3</button>
+            <button type="button" data-go="4">4</button>
+            <button type="button" data-go="5">5</button>
           </div>
-          <ol class="evolve-steps">
-            <li><h3 data-i18n="t1.name">Gesture</h3><p data-i18n="t1.note">It starts loose. A few lines on paper, made while we listen to how you want to live.</p></li>
-            <li><h3 data-i18n="t2.name">Drawing</h3><p data-i18n="t2.note">The sketch is measured and resolved, until every dimension has a reason.</p></li>
-            <li><h3 data-i18n="t3.name">Material</h3><p data-i18n="t3.note">Each surface is chosen for the site and for the people who will use it, with care for where it comes from.</p></li>
-            <li><h3 data-i18n="t4.name">Making</h3><p data-i18n="t4.note">Our kaarigars cut, join and finish it in the workshop and on site, to the drawing.</p></li>
-            <li><h3 data-i18n="t5.name">Object</h3><p data-i18n="t5.note">Placed, dressed and handed over. The first line is still in it.</p></li>
+          <div class="player-cap" aria-live="polite"><strong data-cap-name></strong><p data-cap-note></p></div>
+          <ol class="player-src">
+            <li><strong data-i18n="t1.name">Sketch</strong> <span data-i18n="t1.note">It starts as a few loose lines.</span></li>
+            <li><strong data-i18n="t2.name">Drawing</strong> <span data-i18n="t2.note">We measure it and work out every detail.</span></li>
+            <li><strong data-i18n="t3.name">Material</strong> <span data-i18n="t3.note">We choose timber, stone and finishes with care.</span></li>
+            <li><strong data-i18n="t4.name">Making</strong> <span data-i18n="t4.note">Our craftspeople cut, join and finish it by hand.</span></li>
+            <li><strong data-i18n="t5.name">Finished</strong> <span data-i18n="t5.note">Fitted, styled and handed over to you.</span></li>
           </ol>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="sec">
-    <div class="wrap sec-grid">
-      <header class="sec-label label"><span class="no">01.3</span><span data-i18n="np.eyebrow">No portfolio</span></header>
-      <div class="sec-body">
-        <h2 class="h2" data-i18n="np.title">Don't expect to see your dream home on our site.</h2>
-        <div class="prose">
-          <p data-i18n="np.text">It hasn't been built yet. Every project we take on starts from zero, shaped by the people who will live there and by the place itself. So we show you how we think, draw and build, and let that earn your trust.</p>
-        </div>
-        <div class="cta-row"><a class="tl" href="story.html"><span data-i18n="np.cta">Read our story</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></div>
+  <section class="screen">
+    <div class="wrap">
+      <div class="col center">
+        <h2 class="h2" data-i18n="hw.title">How it works</h2>
       </div>
+      <ol class="flow">
+        <li><h3 class="h3" data-i18n="st1.name">Listen</h3><p data-i18n="st1.line">We meet and see your site.</p></li>
+        <li><h3 class="h3" data-i18n="st2.name">Design</h3><p data-i18n="st2.line">Drawings, 3D views and a budget.</p></li>
+        <li><h3 class="h3" data-i18n="st3.name">Agree</h3><p data-i18n="st3.line">A fixed price, in writing.</p></li>
+        <li><h3 class="h3" data-i18n="st4.name">Build</h3><p data-i18n="st4.line">On site and in our workshop.</p></li>
+        <li><h3 class="h3" data-i18n="st5.name">Hand over</h3><p data-i18n="st5.line">Ready to live in.</p></li>
+      </ol>
+      <p class="more-link"><a class="tl" href="process.html"><span data-i18n="hw.link">See each step</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></p>
     </div>
   </section>
 
-  <section class="sec">
-    <div class="wrap sec-grid">
-      <header class="sec-label label"><span class="no">01.4</span><span data-i18n="iw.label">In writing</span></header>
-      <div class="sec-body">
-        <h2 class="h2" data-i18n="iw.title">What we put in writing.</h2>
-        <p class="lead" data-i18n="iw.text">Trust is easier with paper. Before anything is built, these are agreed and signed.</p>
-        <ol class="ledger">
-          <li><h3 data-i18n="iw1.t">The first meeting carries no obligation.</h3><p data-i18n="iw1.d">We begin every job by getting a feeling for what you need, on site and off it.</p></li>
-          <li><h3 data-i18n="iw2.t">You see a budget estimate before you commit to plans.</h3><p data-i18n="iw2.d">It comes with the concept design, so you decide with numbers in hand.</p></li>
-          <li><h3 data-i18n="iw3.t">Every fee is stated before it is due.</h3><p data-i18n="iw3.d">The design fee, the plans fee and the deposit each have their own agreement.</p></li>
-          <li><h3 data-i18n="iw4.t">The contract is fixed-price.</h3><p data-i18n="iw4.d">It is prepared from the drawings and specifications you select, with a cost plan for each room and vendor options for furniture and bought-out items.</p></li>
-          <li><h3 data-i18n="iw5.t">The timeline is set before work begins.</h3><p data-i18n="iw5.d">So is the delivery schedule.</p></li>
-          <li><h3 data-i18n="iw6.t">One team answers for the whole project.</h3><p data-i18n="iw6.d">Architects, engineers and kaarigars, from concept to handover.</p></li>
-        </ol>
-        <div class="ledger-foot">
-          <p class="motto" data-i18n="cta.quote">By our work shall you know us.</p>
-          <a class="tl" href="process.html#register"><span data-i18n="iw.link">See every document you receive</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-        </div>
+  <section class="screen">
+    <div class="wrap">
+      <div class="col center">
+        <h2 class="h2" data-i18n="pm.title">Our promise</h2>
       </div>
-    </div>
-  </section>
-
-  <section class="sec">
-    <div class="wrap sec-grid">
-      <header class="sec-label label"><span class="no">01.5</span><span data-i18n="ix.label">At a glance</span></header>
-      <div class="sec-body">
-        <div class="pair">
-          <div>
-            <span class="label rows-head" data-i18n="ix.do">What we take on</span>
-            <div class="rows">
-              <a href="services.html#design"><span><span class="r-title" data-i18n="wd.d.title">Design</span><span class="r-sub" data-i18n="wd.d.text">Planning, consultation, architecture and interiors, tailored to you and to the site.</span></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-              <a href="services.html#build"><span><span class="r-title" data-i18n="wd.b.title">Build</span><span class="r-sub" data-i18n="wd.b.text">Turnkey construction and custom works, supervised by the people who designed them.</span></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-              <a href="services.html#collection"><span><span class="r-title" data-i18n="wd.p.title">The Unbound collection</span><span class="r-sub" data-i18n="wd.p.text">Joinery, furniture, acoustics, lighting, sustainable systems and styling, made to order.</span></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-            </div>
-          </div>
-          <div>
-            <span class="label rows-head" data-i18n="ix.run">How a project runs</span>
-            <div class="rows rows--num">
-              <a href="process.html#stage-1"><span class="r-title" data-i18n="st1.name">Discovery</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-              <a href="process.html#stage-2"><span class="r-title" data-i18n="st2.name">Design</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-              <a href="process.html#stage-3"><span class="r-title" data-i18n="st3.name">Documentation</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-              <a href="process.html#stage-4"><span class="r-title" data-i18n="st4.name">Execution</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-              <a href="process.html#stage-5"><span class="r-title" data-i18n="st5.name">Delivery</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ul class="promises">
+        <li><h3 data-i18n="pm1.t">A fixed price before we build.</h3><p data-i18n="pm1.d">You sign one clear contract, costed room by room.</p></li>
+        <li><h3 data-i18n="pm2.t">One team, start to finish.</h3><p data-i18n="pm2.d">The people who draw it are the people who build it.</p></li>
+        <li><h3 data-i18n="pm3.t">No surprises.</h3><p data-i18n="pm3.d">You know every fee and every step before it comes.</p></li>
+      </ul>
     </div>
   </section>
 
@@ -283,11 +249,10 @@
 
 <section class="cta-band">
   <div class="wrap">
-    <div class="cta-arch reveal">
-      <p class="motto" data-i18n="cta.quote">By our work shall you know us.</p>
-      <h2 class="h2" data-i18n="cta.title">Bring us a vision that hasn't been built.</h2>
-      <p class="lead" data-i18n="cta.text">Tell us about the property, its location and what you want to create. We will get back to you within a few days.</p>
-      <div class="cta-row"><a class="go" href="contact.html"><span class="go-ring"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span><span data-i18n="cta.btn">Tell us about your project</span></a></div>
+    <div class="cta-arch">
+      <h2 class="h2" data-i18n="cta.title">Your home isn't on this site. It hasn't been built yet.</h2>
+      <p class="lead" data-i18n="cta.text">Tell us where it is and what you want. We reply within a few days.</p>
+      <div class="cta-row"><a class="go" href="contact.html"><span class="go-ring"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span><span data-i18n="cta.btn">Start a project</span></a></div>
     </div>
   </div>
 </section>
@@ -304,10 +269,9 @@
         <h2 class="label" data-i18n="footer.explore">Explore</h2>
         <ul>
           <li><a href="index.html" data-nav="home" data-i18n="nav.home">Home</a></li>
-          <li><a href="story.html" data-nav="story" data-i18n="nav.story">Our Story</a></li>
+          <li><a href="story.html" data-nav="story" data-i18n="nav.story">About</a></li>
           <li><a href="services.html" data-nav="services" data-i18n="nav.services">Services</a></li>
-          <li><a href="process.html" data-nav="process" data-i18n="nav.process">How We Work</a></li>
-          <li><a href="why.html" data-nav="why" data-i18n="nav.why">Why Unbound</a></li>
+          <li><a href="process.html" data-nav="process" data-i18n="nav.process">How it works</a></li>
           <li><a href="contact.html" data-nav="contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>

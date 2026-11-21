@@ -211,55 +211,62 @@
   window.addEventListener('scroll', queueScrollJobs, { passive: true });
   window.addEventListener('resize', queueScrollJobs);
 
-  /* ---------- Stage bar (How We Work) ---------- */
-  var stepper = $('[data-stepper]');
-  if (stepper) {
-    var stepLinks = $$('a', stepper);
-    var stageSecs = $$('[data-stage]');
-    scrollJobs.push(function () {
-      var mark = window.innerHeight * 0.42;
-      var active = -1;
-      stageSecs.forEach(function (sec, i) { if (sec.getBoundingClientRect().top <= mark) active = i; });
-      if (active === stageSecs.length - 1 && stageSecs[active].getBoundingClientRect().bottom < mark) active = -1;
-      stepLinks.forEach(function (a, i) {
-        if (i === active) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current');
-      });
-    });
-  }
+  /* ---------- The doorway: one drawing, five states, shown one at a time ---------- */
+  var player = $('[data-player]');
+  if (player) {
+    var pArt = $('.ev', player);
+    var pLayers = $$('[data-at]', pArt);
+    var pTabs = $$('[data-go]', player);
+    var pSrc = $$('.player-src li', player);
+    var pName = $('[data-cap-name]', player);
+    var pNote = $('[data-cap-note]', player);
+    var pNow = 0;
+    var pTimer = null;
 
-  /* ---------- From idea to object: one drawing, five states ---------- */
-  var evolve = $('[data-evolve]');
-  if (evolve) {
-    var evArt = $('.ev', evolve);
-    var evSteps = $$('.evolve-steps li', evolve);
-    var evLayers = $$('[data-at]', evArt);
-    var evOut = $('[data-evolve-stage]', evolve);
-    var evNow = -1;
-    var showStage = function (n) {
-      evLayers.forEach(function (layer) { layer.classList.toggle('on', Number(layer.getAttribute('data-at')) <= n); });
-      evArt.classList.toggle('past-1', n > 1);
-      evArt.classList.toggle('at-5', n >= 5);
-      evSteps.forEach(function (li, i) { li.classList.toggle('is-active', i + 1 === n); });
-      var name = n > 0 ? $('h3', evSteps[n - 1]).textContent : '';
-      if (evOut) evOut.textContent = Math.max(1, n) + ' / 5' + (name ? ' · ' + name : '');
+    var caption = function (n) {
+      var src = pSrc[n - 1];
+      if (!src) return;
+      pName.textContent = $('strong', src).textContent;
+      pNote.textContent = $('span', src).textContent;
+      pTabs.forEach(function (b, i) {
+        b.setAttribute('aria-pressed', String(i + 1 === n));
+        if (pSrc[i]) b.setAttribute('aria-label', (i + 1) + ': ' + $('strong', pSrc[i]).textContent);
+      });
     };
-    scrollJobs.push(function () {
-      var vh = window.innerHeight;
-      var box = evolve.getBoundingClientRect();
-      var n = 0;
-      if (box.top < vh * 0.8) {
-        // the reading line sits lower on phones, where the drawing is pinned above the text
-        var line = vh * (window.innerWidth >= 960 ? 0.5 : 0.74);
-        var nearest = Infinity;
-        evSteps.forEach(function (li, i) {
-          var r = li.getBoundingClientRect();
-          var d = Math.abs((r.top + r.bottom) / 2 - line);
-          if (d < nearest) { nearest = d; n = i + 1; }
-        });
-      }
-      if (n !== evNow) { evNow = n; showStage(n); }
+    var showStage = function (n) {
+      pNow = n;
+      pLayers.forEach(function (layer) { layer.classList.toggle('on', Number(layer.getAttribute('data-at')) <= n); });
+      pArt.classList.toggle('past-1', n > 1);
+      pArt.classList.toggle('at-5', n >= 5);
+      caption(n);
+    };
+    var stopPlay = function () { if (pTimer) { clearInterval(pTimer); pTimer = null; } };
+
+    pTabs.forEach(function (b) {
+      b.addEventListener('click', function () { stopPlay(); showStage(Number(b.getAttribute('data-go'))); });
     });
-    doc.addEventListener('su:lang', function () { if (evNow >= 0) showStage(evNow); });
+    doc.addEventListener('su:lang', function () { caption(pNow || 1); });
+    caption(1);
+
+    var begin = function () {
+      // visitors who ask for less motion get the finished picture and can step back through it
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { showStage(5); return; }
+      showStage(1);
+      pTimer = setInterval(function () {
+        if (pNow >= 5) { stopPlay(); return; }
+        showStage(pNow + 1);
+      }, 2600);
+    };
+    if ('IntersectionObserver' in window) {
+      var pWatch = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        pWatch.disconnect();
+        begin();
+      }, { threshold: 0.3 });
+      pWatch.observe(player);
+    } else {
+      begin();
+    }
   }
 
   /* ---------- The slate: a gesture goes in, a drawing comes out ---------- */
@@ -389,13 +396,6 @@
     }
   }
 
-  /* ---------- Dimension strings that measure the real page ---------- */
-  var measures = $$('[data-measure]');
-  if (measures.length) {
-    scrollJobs.push(function () {
-      measures.forEach(function (m) { m.textContent = Math.round(m.parentElement.getBoundingClientRect().width); });
-    });
-  }
   runScrollJobs();
 
   /* ---------- Contact details from config.js ---------- */
@@ -488,7 +488,7 @@
         email: el.email.value.trim(),
         location: el.location.value.trim(),
         interest: sel && sel.value ? sel.options[sel.selectedIndex].text : '',
-        property: el.property.value.trim(),
+        property: el.property ? el.property.value.trim() : '',
         vision: el.vision.value.trim()
       };
     };
@@ -555,7 +555,5 @@
 
   /* ---------- Small things ---------- */
   var today = new Date();
-  var two = function (n) { return (n < 10 ? '0' : '') + n; };
   $$('[data-year]').forEach(function (el) { el.textContent = today.getFullYear(); });
-  $$('[data-today]').forEach(function (el) { el.textContent = two(today.getDate()) + '.' + two(today.getMonth() + 1) + '.' + today.getFullYear(); });
 })();
