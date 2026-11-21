@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Services | studio Unbound</title>
 <meta name="description" content="Design, build and six specialist teams: joinery, furniture, sound, lighting, sustainable systems and styling.">
-<meta name="theme-color" content="#141615">
+<meta name="theme-color" content="#0B0B0B">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="studio Unbound">
 <meta property="og:title" content="Services | studio Unbound">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<script>(function(){var d=document.documentElement;d.classList.add('js');try{var q=new URLSearchParams(location.search),t=q.get('theme')||localStorage.getItem('su-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}d.setAttribute('data-theme',t);var l=q.get('lang')||localStorage.getItem('su-lang');if(l==='te'||l==='hi'){d.classList.add('i18n-wait')}}catch(e){d.setAttribute('data-theme','light')}})();</script>
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var q=new URLSearchParams(location.search),t=q.get('theme')||localStorage.getItem('su-theme');if(t!=='light'&&t!=='dark'){t='dark'}d.setAttribute('data-theme',t);var l=q.get('lang')||localStorage.getItem('su-lang');if(l==='te'||l==='hi'){d.classList.add('i18n-wait')}}catch(e){d.setAttribute('data-theme','dark')}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&amp;display=swap">
@@ -143,9 +143,12 @@
 <section class="cta-band">
   <div class="wrap">
     <div class="cta-arch">
-      <h2 class="h2" data-i18n="cta.title">Your home isn't on this site. It hasn't been built yet.</h2>
-      <p class="lead" data-i18n="cta.text">Tell us where it is and what you want. We reply within a few days.</p>
-      <div class="cta-row"><a class="go" href="contact.html"><span class="go-ring"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span><span data-i18n="cta.btn">Start a project</span></a></div>
+      <h2 class="h2" data-i18n="cta.title">Let's begin with a clean slate.</h2>
+      <p class="lead" data-i18n="cta.text">Your home isn't on this site, because it hasn't been built yet. Tell us where it is and what you want.</p>
+      <div class="cta-row">
+        <a class="go go--fill" data-contact="whatsapp" href="https://wa.me/919908165396" target="_blank" rel="noopener"><span class="go-ring"><svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2z"/><path d="M9.3 8.3c-.5 1.3.3 3 1.7 4.5s3.1 2.3 4.5 1.9l.6-1.5-1.8-1-.8.8c-.8-.4-1.6-1.2-2-2l.8-.8-1-1.8z"/></svg></span><span data-i18n="cta.wa">Chat on WhatsApp</span></a>
+        <a class="tl" href="contact.html"><span data-i18n="cta.btn">Send us the details</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
@@ -193,9 +196,7 @@
   </div>
 </footer>
 
-<a class="wa-float" data-contact="whatsapp" href="#" hidden aria-label="Chat with us on WhatsApp" data-i18n-attr="aria-label:ui.wa">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2z"/><path d="M9.3 8.3c-.5 1.3.3 3 1.7 4.5s3.1 2.3 4.5 1.9l.6-1.5-1.8-1-.8.8c-.8-.4-1.6-1.2-2-2l.8-.8-1-1.8z"/></svg>
-</a>
+<a class="wa-float" data-contact="whatsapp" href="https://wa.me/919908165396" target="_blank" rel="noopener" hidden aria-label="Chat with us on WhatsApp" data-i18n-attr="aria-label:ui.wa"><svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2z"/><path d="M9.3 8.3c-.5 1.3.3 3 1.7 4.5s3.1 2.3 4.5 1.9l.6-1.5-1.8-1-.8.8c-.8-.4-1.6-1.2-2-2l.8-.8-1-1.8z"/></svg><span>WhatsApp</span></a>
 
 <script src="assets/js/config.js"></script>
 <script src="assets/js/main.js"></script>

@@ -18,8 +18,7 @@
   var themeMeta = $('meta[name="theme-color"]');
   function paintThemeMeta() {
     if (!themeMeta) return;
-    var onSlate = root.getAttribute('data-theme') === 'dark' || (doc.body && doc.body.getAttribute('data-page') === 'home');
-    themeMeta.setAttribute('content', onSlate ? '#141615' : '#F1F0EC');
+    themeMeta.setAttribute('content', root.getAttribute('data-theme') === 'light' ? '#F7F3EE' : '#0B0B0B');
   }
   paintThemeMeta();
   $$('[data-theme-toggle]').forEach(function (btn) {
@@ -30,17 +29,6 @@
       paintThemeMeta();
     });
   });
-  // follow the system while the visitor has not chosen for themselves
-  if (window.matchMedia) {
-    var mq = window.matchMedia('(prefers-color-scheme: dark)');
-    var onScheme = function (e) {
-      if (store.get('su-theme') || params.get('theme')) return;
-      root.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-      paintThemeMeta();
-    };
-    if (mq.addEventListener) mq.addEventListener('change', onScheme);
-  }
-
   /* ---------- Language: English (in the page), Telugu and Hindi (loaded on demand) ---------- */
   var LANGS = { en: 'EN', te: 'తె', hi: 'हि' };
   var FONTS = {
@@ -211,190 +199,56 @@
   window.addEventListener('scroll', queueScrollJobs, { passive: true });
   window.addEventListener('resize', queueScrollJobs);
 
-  /* ---------- The doorway: one drawing, five states, shown one at a time ---------- */
-  var player = $('[data-player]');
-  if (player) {
-    var pArt = $('.ev', player);
-    var pLayers = $$('[data-at]', pArt);
-    var pTabs = $$('[data-go]', player);
-    var pSrc = $$('.player-src li', player);
-    var pName = $('[data-cap-name]', player);
-    var pNote = $('[data-cap-note]', player);
-    var pNow = 0;
-    var pTimer = null;
-
-    var caption = function (n) {
-      var src = pSrc[n - 1];
-      if (!src) return;
-      pName.textContent = $('strong', src).textContent;
-      pNote.textContent = $('span', src).textContent;
-      pTabs.forEach(function (b, i) {
-        b.setAttribute('aria-pressed', String(i + 1 === n));
-        if (pSrc[i]) b.setAttribute('aria-label', (i + 1) + ': ' + $('strong', pSrc[i]).textContent);
-      });
-    };
-    var showStage = function (n) {
-      pNow = n;
-      pLayers.forEach(function (layer) { layer.classList.toggle('on', Number(layer.getAttribute('data-at')) <= n); });
-      pArt.classList.toggle('past-1', n > 1);
-      pArt.classList.toggle('at-5', n >= 5);
-      caption(n);
-    };
-    var stopPlay = function () { if (pTimer) { clearInterval(pTimer); pTimer = null; } };
-
-    pTabs.forEach(function (b) {
-      b.addEventListener('click', function () { stopPlay(); showStage(Number(b.getAttribute('data-go'))); });
+  /* ---------- The house builds as the visitor scrolls through the five steps ---------- */
+  var story = $('[data-scrub]');
+  if (story) {
+    var storySteps = $$('.story-steps li', story);
+    var storyParts = $$('[data-from]', story).map(function (el) {
+      var out = (el.getAttribute('data-out') || '').split(',');
+      return {
+        el: el,
+        from: Number(el.getAttribute('data-from')),
+        to: Number(el.getAttribute('data-to')),
+        outFrom: out.length === 2 ? Number(out[0]) : null,
+        outTo: out.length === 2 ? Number(out[1]) : null
+      };
     });
-    doc.addEventListener('su:lang', function () { caption(pNow || 1); });
-    caption(1);
+    var unit = function (v) { return Math.max(0, Math.min(1, v)); };
+    var storyActive = -1;
 
-    var begin = function () {
-      // visitors who ask for less motion get the finished picture and can step back through it
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { showStage(5); return; }
-      showStage(1);
-      pTimer = setInterval(function () {
-        if (pNow >= 5) { stopPlay(); return; }
-        showStage(pNow + 1);
-      }, 2600);
-    };
-    if ('IntersectionObserver' in window) {
-      var pWatch = new IntersectionObserver(function (entries) {
-        if (!entries[0].isIntersecting) return;
-        pWatch.disconnect();
-        begin();
-      }, { threshold: 0.3 });
-      pWatch.observe(player);
-    } else {
-      begin();
-    }
-  }
+    scrollJobs.push(function () {
+      var vh = window.innerHeight;
+      // the reading line sits lower on phones, where the drawing is pinned above the text
+      var line = vh * (window.innerWidth >= 900 ? 0.55 : 0.78);
+      var mids = storySteps.map(function (li) { var r = li.getBoundingClientRect(); return (r.top + r.bottom) / 2; });
+      var share = 1 / mids.length;
 
-  /* ---------- The slate: a gesture goes in, a drawing comes out ---------- */
-  var slate = $('[data-slate]');
-  if (slate && window.PointerEvent) {
-    var SVG_NS = 'http://www.w3.org/2000/svg';
-    var board = $('.slate-user', slate);
-    var shapeLayer = $('.slate-shapes', board);
-    var labelLayer = $('.slate-labels', board);
-    var clearBtn = $('[data-slate-clear]', slate);
-    var demo = $('.hero-demo svg', slate);
-    var items = [];
-    var stroke = null;
-    var rawPath = null;
-
-    var make = function (name, attrs, parent) {
-      var node = doc.createElementNS(SVG_NS, name);
-      Object.keys(attrs).forEach(function (k) { node.setAttribute(k, attrs[k]); });
-      parent.appendChild(node);
-      return node;
-    };
-    var at = function (e) { var r = board.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
-    var gap = function (a, b) { return Math.hypot(a.x - b.x, a.y - b.y); };
-    var f = function (n) { return n.toFixed(1); };
-    // one pixel reads as ten millimetres, rounded the way a site measure would be
-    var mm = function (px) {
-      var text = String(Math.max(50, Math.round(px / 5) * 50));
-      return text.length > 3 ? text.slice(0, -3) + ' ' + text.slice(-3) : text;
-    };
-    var note = function (parent, x, y, text, turn) {
-      var t = make('text', { x: f(x), y: f(y), 'text-anchor': 'middle' }, parent);
-      if (turn) t.setAttribute('transform', 'rotate(' + f(turn) + ' ' + f(x) + ' ' + f(y) + ')');
-      t.textContent = text;
-    };
-
-    var draft = function (pts) {
-      var a = pts[0], b = pts[pts.length - 1];
-      var len = 0, i;
-      for (i = 1; i < pts.length; i++) len += gap(pts[i - 1], pts[i]);
-      var g = make('g', {}, shapeLayer);
-      var gl = make('g', {}, labelLayer);
-
-      if (len < 8) {
-        make('circle', { 'class': 'dot', cx: f(a.x), cy: f(a.y), r: 5.5 }, gl);
+      // each step owns an equal share of the build, complete when its text reaches the reading line
+      var p;
+      if (line <= mids[0]) {
+        p = share * unit(1 - (mids[0] - line) / (vh * 0.6));
+      } else if (line >= mids[mids.length - 1]) {
+        p = 1;
       } else {
-        var minY = Infinity, maxY = -Infinity, cx = 0, cy = 0;
-        pts.forEach(function (p) { minY = Math.min(minY, p.y); maxY = Math.max(maxY, p.y); cx += p.x; cy += p.y; });
-        cx /= pts.length; cy /= pts.length;
-        var chord = gap(a, b);
-        var base = Math.max(a.y, b.y);
-        var rise = base - minY;
-        var span = Math.abs(b.x - a.x);
-
-        if (len > 90 && chord < len * 0.22) {
-          // a closed loop becomes a circle
-          var r = 0;
-          pts.forEach(function (p) { r += gap(p, { x: cx, y: cy }); });
-          r /= pts.length;
-          make('path', { 'class': 'shape', pathLength: 1, d: 'M' + f(cx + r) + ' ' + f(cy) + 'A' + f(r) + ' ' + f(r) + ' 0 1 1 ' + f(cx - r) + ' ' + f(cy) + 'A' + f(r) + ' ' + f(r) + ' 0 1 1 ' + f(cx + r) + ' ' + f(cy) }, g);
-          var k = r * 0.7071;
-          make('path', { 'class': 'tick', d: 'M' + f(cx - 6) + ' ' + f(cy) + 'H' + f(cx + 6) + 'M' + f(cx) + ' ' + f(cy - 6) + 'V' + f(cy + 6) + 'M' + f(cx) + ' ' + f(cy) + 'L' + f(cx + k) + ' ' + f(cy - k) }, gl);
-          note(gl, cx + k / 2 + 10, cy - k / 2 + 10, 'R ' + mm(r), -45);
-        } else if (span > 36 && rise > span * 0.55 && Math.abs(b.y - a.y) < span * 0.5 && maxY - base < rise * 0.2) {
-          // a stroke that rises and returns to the ground becomes an arched opening
-          var x1 = Math.min(a.x, b.x), x2 = Math.max(a.x, b.x);
-          var rad = (x2 - x1) / 2;
-          var spring = Math.min(base, minY + rad);
-          make('path', { 'class': 'shape', pathLength: 1, d: 'M' + f(x1) + ' ' + f(base) + 'V' + f(spring) + 'A' + f(rad) + ' ' + f(rad) + ' 0 0 1 ' + f(x2) + ' ' + f(spring) + 'V' + f(base) }, g);
-          make('path', { 'class': 'tick', d: 'M' + f(x1 - 16) + ' ' + f(base) + 'H' + f(x2 + 16) + 'M' + f(x1) + ' ' + f(base + 16) + 'H' + f(x2) + 'M' + f(x1) + ' ' + f(base + 10) + 'V' + f(base + 22) + 'M' + f(x2) + ' ' + f(base + 10) + 'V' + f(base + 22) }, gl);
-          note(gl, (x1 + x2) / 2, base + 36, mm(x2 - x1) + ' × ' + mm(base - spring + rad));
-        } else {
-          // anything else becomes a straight line, squared up if it is nearly level or plumb
-          var p = { x: a.x, y: a.y }, q = { x: b.x, y: b.y };
-          var dx = q.x - p.x, dy = q.y - p.y;
-          if (Math.abs(dy) < Math.abs(dx) * 0.12) q.y = p.y;
-          else if (Math.abs(dx) < Math.abs(dy) * 0.12) q.x = p.x;
-          dx = q.x - p.x; dy = q.y - p.y;
-          var L = Math.hypot(dx, dy) || 1;
-          var nx = -dy / L, ny = dx / L;
-          make('path', { 'class': 'shape', pathLength: 1, d: 'M' + f(p.x) + ' ' + f(p.y) + 'L' + f(q.x) + ' ' + f(q.y) }, g);
-          make('path', { 'class': 'tick', d: 'M' + f(p.x - nx * 6) + ' ' + f(p.y - ny * 6) + 'L' + f(p.x + nx * 6) + ' ' + f(p.y + ny * 6) + 'M' + f(q.x - nx * 6) + ' ' + f(q.y - ny * 6) + 'L' + f(q.x + nx * 6) + ' ' + f(q.y + ny * 6) }, gl);
-          var deg = Math.atan2(dy, dx) * 180 / Math.PI;
-          if (deg > 90) deg -= 180; else if (deg < -90) deg += 180;
-          var side = ny > 0 ? -1 : 1;
-          note(gl, (p.x + q.x) / 2 + nx * 14 * side, (p.y + q.y) / 2 + ny * 14 * side, mm(L), deg);
-        }
+        var i = 0;
+        while (i < mids.length - 2 && line >= mids[i + 1]) i++;
+        p = share * (i + 1 + (line - mids[i]) / (mids[i + 1] - mids[i]));
       }
 
-      items.push([g, gl]);
-      if (items.length > 14) items.shift().forEach(function (node) { node.remove(); });
-      if (clearBtn) clearBtn.hidden = false;
-    };
-
-    var endStroke = function (cancelled) {
-      if (!stroke) return;
-      var pts = stroke, path = rawPath;
-      stroke = rawPath = null;
-      path.classList.add('is-gone');
-      setTimeout(function () { path.remove(); }, 600);
-      if (!cancelled) draft(pts);
-    };
-
-    slate.addEventListener('pointerdown', function (e) {
-      if (e.button || e.target.closest('a, button')) return;
-      var p = at(e);
-      stroke = [p];
-      rawPath = make('path', { 'class': 'raw', d: 'M' + f(p.x) + ' ' + f(p.y) }, board);
-      try { slate.setPointerCapture(e.pointerId); } catch (err) { /* older browsers */ }
-    });
-    slate.addEventListener('pointermove', function (e) {
-      if (!stroke) return;
-      var p = at(e);
-      if (gap(p, stroke[stroke.length - 1]) < 2) return;
-      stroke.push(p);
-      rawPath.setAttribute('d', rawPath.getAttribute('d') + 'L' + f(p.x) + ' ' + f(p.y));
-    });
-    slate.addEventListener('pointerup', function () { endStroke(false); });
-    slate.addEventListener('pointercancel', function () { endStroke(true); });
-
-    if (clearBtn) {
-      clearBtn.addEventListener('click', function () {
-        items.forEach(function (pair) { pair.forEach(function (node) { node.remove(); }); });
-        items = [];
-        if (demo) demo.classList.add('is-wiped');
-        clearBtn.hidden = true;
+      storyParts.forEach(function (part) {
+        part.el.style.setProperty('--t', unit((p - part.from) / (part.to - part.from)).toFixed(3));
+        if (part.outFrom !== null) part.el.style.setProperty('--o', (1 - unit((p - part.outFrom) / (part.outTo - part.outFrom))).toFixed(3));
       });
-    }
+
+      var nearest = 0, gapNow = Infinity;
+      mids.forEach(function (m, n) { var d = Math.abs(m - line); if (d < gapNow) { gapNow = d; nearest = n; } });
+      if (nearest !== storyActive) {
+        storyActive = nearest;
+        storySteps.forEach(function (li, n) { li.classList.toggle('is-active', n === nearest); });
+      }
+    });
   }
+
 
   runScrollJobs();
 

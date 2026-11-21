@@ -5,9 +5,9 @@
 window.SU_CONFIG = {
 
   contact: {
-    phone: "",        // shown and dialled as typed, e.g. "+91 98765 43210"
-    whatsapp: "",     // number with country code, e.g. "919876543210"
-    email: "",        // e.g. "hello@studiounbound.in"
+    phone: "+91 99081 65396",        // shown and dialled as typed, e.g. "+91 98765 43210"
+    whatsapp: "919908165396",     // number with country code, e.g. "919876543210"
+    email: "contact@studiounbound.in",        // e.g. "hello@studiounbound.in"
     instagram: "",    // full link, e.g. "https://instagram.com/studiounbound"
     mapUrl: ""        // Google Maps link to the studio (optional)
   },

@@ -8,7 +8,7 @@ The site follows one rule: one idea per screen, in a short sentence, with a draw
 
 | File | What it is |
 | --- | --- |
-| `index.html` | Home: the slate visitors can draw on, what we do, the doorway drawing, the five steps, our promise |
+| `index.html` | Home: the hero, what we do, the house that builds as you scroll, our promise |
 | `story.html` | About: our story, what we believe, the team, the workshop crafts, the sketch studies |
 | `services.html` | Design, Build and the six Unbound teams |
 | `process.html` | How it works: the five steps, and what you pay and when |
@@ -38,16 +38,15 @@ Anything left empty stays hidden, so the site never shows a placeholder. After p
 - Keep it short. If a screen needs more than two sentences, it is probably two screens.
 - The header and footer are repeated in every page, so a change to the menu has to be made in all six files.
 
-## The two drawings on Home
+## The look, and the scroll story
 
-- **The slate (top).** A visitor drags to draw. A rough stroke becomes a straight measured line, a closed loop becomes a circle, a stroke that rises and returns becomes an arched opening, and a tap becomes a dot. On phones a sideways drag draws and an up-and-down swipe still scrolls. "Clean slate" wipes it.
-- **The doorway.** One drawing in five steps: sketch, drawing, material, making, finished. It plays through once when it comes into view; tapping a number shows that step and stops the play.
-
-Both are drawn in code inside `index.html`, so they stay sharp at any size and need no image files.
+- **Theme.** Taken from the business card: the red-orange heat on the front is the Home hero, and the strip of it along the top of every other page echoes the back. Everything else is black, white and one colour.
+- **The house that builds itself (Home).** As a visitor scrolls through the five steps, one drawing goes from an empty plot to a dashed plan, foundations and materials, rising walls, and a finished home with the lights on. It is drawn in code inside `index.html`, so it needs no image files.
+- **WhatsApp.** The buttons on every page, and the floating button, open a chat with the number in `config.js`. If no email delivery is set, the enquiry form also sends through WhatsApp.
 
 ## Themes and languages
 
-- Light and dark follow the visitor's device setting until they press the toggle; their choice is then remembered. The slate at the top of Home is dark in both.
+- The site opens in the dark theme, which is the brand. The toggle switches to a light theme, and the visitor's choice is remembered.
 - English is the default. Telugu and Hindi load only when chosen, and the choice is remembered.
 - A link can open the site in a set language or theme: `index.html?lang=te`, `index.html?lang=hi&theme=dark`.
 - The typeface is Comfortaa throughout, with Century Gothic as the fallback.
